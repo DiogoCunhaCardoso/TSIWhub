@@ -13,7 +13,7 @@
       <div
         class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8"
       >
-        <form class="space-y-6" id="loginForm">
+        <form class="space-y-4" id="loginForm">
           <h5 class="text-xl font-medium text-gray-900">Log in</h5>
           <div>
             <label
@@ -69,29 +69,6 @@
       </div>
     </main>
 
-    <script>
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-
-          // Check if user exists in localStorage
-          const userData = JSON.parse(localStorage.getItem(email));
-          if (userData && userData.password === password) {
-            // Check if user is admin
-            if (userData.role === "admin") {
-              window.location.href = "index-admin.html";
-            } else {
-              window.location.href = "index.html";
-            }
-          } else {
-            // Show error message
-            document.getElementById("emailError").classList.remove("hidden");
-            document.getElementById("passwordError").classList.remove("hidden");
-          }
-        });
-    </script>
+    <script src="/js/user/login.js"></script>
   </body>
 </html>

@@ -36,7 +36,11 @@
           id="mobileDropdown"
           class="hidden bg-gray-800 absolute top-[53.6px] left-0 right-0 z-10 py-2"
         >
-          <a class="block text-white px-4 py-2 bg-violet-900">Presentation</a>
+          <a
+            href="/templates/index.html"
+            class="block text-white px-4 py-2 hover:bg-violet-500"
+            >Presentation</a
+          >
           <a
             href="/templates/user/study-plans.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
@@ -47,11 +51,7 @@
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Outings</a
           >
-          <a
-            href="/templates/user/access.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Access</a
-          >
+          <a class="block text-white px-4 py-2 bg-violet-900">Access</a>
           <a
             href="/templates/user/more-info.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
@@ -82,7 +82,8 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex gap-2 flex justify-center items-center">
         <a
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
+          href="/templates/index.html"
+          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Presentation</a
         >
         <a
@@ -91,13 +92,12 @@
           >Study Plans</a
         >
         <a
-          href="/templates/user/outings"
+          href="/templates/user/outings.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Outings</a
         >
         <a
-          href="/templates/user/access.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
+          class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
           >Access</a
         >
         <a
@@ -156,7 +156,7 @@
       </div>
     </nav>
     <!-- BODY -->
-    <h1 class="m-4 lg:m-6">PRESENTATION</h1>
+    <h1 class="m-4 lg:m-6">ACCESS</h1>
     <script src="/js/user/navbar.js"></script>
   </body>
 </html>
