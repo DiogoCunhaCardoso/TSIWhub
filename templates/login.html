@@ -1,0 +1,97 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Add Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="flex justify-center items-center h-screen p-5 bg-violet-100">
+      <div
+        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8"
+      >
+        <form class="space-y-6" id="loginForm">
+          <h5 class="text-xl font-medium text-gray-900">Log in</h5>
+          <div>
+            <label
+              for="email"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Your email</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              placeholder="name@email.com"
+              required
+            />
+            <div id="emailError" class="text-red-500 text-xs hidden">
+              Invalid email or password
+            </div>
+          </div>
+          <div>
+            <label
+              for="password"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Your password</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              required
+            />
+            <div id="passwordError" class="text-red-500 text-xs hidden">
+              Invalid email or password
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="w-full text-white bg-violet-600 hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-violet-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          >
+            Login to your account
+          </button>
+          <div class="text-sm font-medium text-gray-500">
+            Not registered?
+            <a
+              href="/templates/register.html"
+              class="text-violet-600 hover:underline"
+              >Create account</a
+            >
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Check if user exists in localStorage
+          const userData = JSON.parse(localStorage.getItem(email));
+          if (userData && userData.password === password) {
+            // Check if user is admin
+            if (userData.role === "admin") {
+              window.location.href = "index-admin.html";
+            } else {
+              window.location.href = "index.html";
+            }
+          } else {
+            // Show error message
+            document.getElementById("emailError").classList.remove("hidden");
+            document.getElementById("passwordError").classList.remove("hidden");
+          }
+        });
+    </script>
+  </body>
+</html>
