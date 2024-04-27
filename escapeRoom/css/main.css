@@ -1,0 +1,258 @@
+/* POP UP */
+
+#popup {
+  position: fixed;
+  inset: 40px;
+  background: white;
+  z-index: 10;
+  border-radius: 10px;
+  padding: 24px;
+  display: none;
+  pointer-events: none;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background: #a29bba;
+}
+
+/* TIMER */
+
+.timer_stuff {
+  position: fixed;
+}
+
+#startTimer {
+  top: 40px;
+  right: 10px;
+  z-index: 100;
+}
+
+#stopTimer {
+  top: 60px;
+  right: 10px;
+  z-index: 100;
+}
+
+#resetTimer {
+  top: 80px;
+  right: 10px;
+  z-index: 100;
+}
+
+#timer {
+  padding: 4px;
+  border: 2px solid #000000;
+  font-weight: bolder;
+  background: #ff0000;
+  color: #ffffff;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+/*  */
+
+#container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#toplevel {
+  position: fixed;
+  width: 40vw;
+  height: 50vh;
+  left: 30vw;
+  top: 25vh;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+area {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* ABSOLUTES */
+
+#escape_room,
+map,
+#fundo,
+#layer_areas,
+.lock_UI,
+.books_UI,
+.TV_UI,
+.post-it_UI,
+.monitor_UI,
+.matrix_UI,
+.symbolLock_UI,
+.safe_UI,
+.cipher_UI,
+.door_UI {
+  position: absolute;
+}
+
+/*  */
+
+.variants {
+  position: absolute;
+  z-index: -1;
+}
+
+#bubble {
+  position: absolute;
+  visibility: hidden;
+  width: 32px;
+  height: 32px;
+}
+
+#filter {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  background: #000000;
+  opacity: 50%;
+  z-index: -1;
+}
+
+/* SLOTS */
+
+.allSlots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  gap: 10px;
+}
+
+.allSlots > div {
+  border-radius: 8px;
+  background: #fff;
+  border: solid 3px black;
+  height: 96px;
+  width: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  */
+
+#layer_lock {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_books {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_TV {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_post-it {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_monitor {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_matrix {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_symbolLock {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_safe {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+
+#layer_cipher {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}
+#cipher {
+  z-index: -1;
+}
+
+#layer_door {
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  z-index: -2;
+  border-radius: 10px;
+}

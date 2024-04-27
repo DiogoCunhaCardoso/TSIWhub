@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Escape Room</title>
+    <link rel="stylesheet" href="/escapeRoom/css/main.css" />
   </head>
   <body>
-    <h1>Escape Room here</h1>
+    <div id="popup">
+      <div>
+        <p id="close" style="background: blue; color: white; padding: 4px">
+          close
+        </p>
+        <h1 id="question"></h1>
+        <div id="options"></div>
+
+        <p id="answer"></p>
+      </div>
+    </div>
+    <div id="container">
+      <div id="escape_room">
+        <img src="../images/assets/fundo.png" alt="escape room" id="fundo" />
+        <!--           style="height: 100vh; opacity: 50%" -->
+        <!-- MUDAR AQUI -->
+        <img
+          src="../images/assets/Variants/Armario_Aberto.png"
+          id="armario_aberto"
+          class="variants"
+        />
+        <img
+          src="../images/assets/Variants/Caixa_Aberta.png"
+          id="caixa_aberta"
+          class="variants"
+        />
+        <img
+          src="../images/assets/Variants/Cifra_Parede.png"
+          id="cifra_parede"
+          class="variants"
+        />
+        <img
+          src="../images/assets/Variants/Televisao_Olho.png"
+          id="televisao_olho"
+          class="variants"
+        />
+        <img
+          src="../images/assets/area layer.png"
+          id="layer_areas"
+          usemap="#escape room"
+        />
+      </div>
+      <!--  -->
+      <!-- MAP -->
+      <map name="escape room" id="mapa"> </map>
+      <!-- Areas added on mapping.js -->
+      <img
+        src="../images/assets/infoBubble.png"
+        alt="info bubble"
+        id="bubble"
+        onclick="closeUI()"
+      />
+      <div class="allSlots">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+      </div>
+
+      <div id="timer" class="timer_stuff">00:15:00</div>
+      <button class="timer_stuff" id="startTimer" onclick="startTimer()">
+        Start
+      </button>
+      <button class="timer_stuff" id="stopTimer" onclick="stopTimer()">
+        Stop
+      </button>
+      <button class="timer_stuff" id="resetTimer" onclick="resetTimer()">
+        Reset
+      </button>
+    </div>
+
+    <script defer type="module" src="/escapeRoom/js/model.js"></script>
+    <script defer type="module" src="/escapeRoom/js/mapping.js"></script>
+    <script defer type="module" src="/escapeRoom/js/game.js"></script>
+    <script defer type="module" src="/escapeRoom/js/"></script>
   </body>
 </html>
