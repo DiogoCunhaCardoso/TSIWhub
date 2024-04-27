@@ -9,7 +9,9 @@
   </head>
   <body>
     <!-- NAVIGATION -->
-    <nav class="flex justify-between items-center bg-violet-600 py-4 px-6">
+    <nav
+      class="flex justify-between items-center bg-violet-600 py-4 px-6 fixed top-0 w-dvw"
+    >
       <a href="/templates/index.html" class="text-white">
         <img src="/images/logo.svg" alt="logo" width="64" />
       </a>
@@ -52,11 +54,6 @@
             >Outings</a
           >
           <a
-            href="/templates/user/access.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Access</a
-          >
-          <a
             href="/templates/user/more-info.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >+Info</a
@@ -96,11 +93,7 @@
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Outings</a
         >
-        <a
-          href="/templates/user/access.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Access</a
-        >
+
         <a
           href="/templates/user/more-info.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
@@ -156,7 +149,34 @@
       </div>
     </nav>
     <!-- BODY -->
-    <h1 class="m-4 lg:m-6">ALUMNI</h1>
+    <main
+      class="my-24 mx-5 flex justify-center flex-col items-center min-h-[calc(100vh-200px)]"
+    >
+      <a class="px-8 py-2 gap-4 flex items-center rounded-lg bg-gray-800">
+        <img
+          class="object-cover rounded-full h-20 aspect-square"
+          src="${image}"
+          alt=""
+        />
+        <div class="flex flex-col justify-between p-4">
+          <h5 class="text-lg font-bold text-white">${name}</h5>
+          <p class="mb-3 text-sm text-gray-400">Término do curso: ${date}</p>
+          <h5 class="text-lg font-bold text-white">Testemunho</h5>
+          <p class="mb-3 text-sm text-gray-400">${description}</p>
+        </div>
+      </a>
+      <!-- Four smaller cards -->
+      <div id="allCards" class="flex flex-wrap justify-center mt-6 gap-6"></div>
+    </main>
+
+    <!-- FAB -->
+    <div id="FABDiv"></div>
+    <!-- FOOTER -->
+    <div id="FooterDiv" class="fixed bottom-0"></div>
+
+    <script src="/components/FBA.js"></script>
+    <script src="/components/Footer.js"></script>
     <script src="/js/user/navbar.js"></script>
+    <script src="/js/user/alumni.js"></script>
   </body>
 </html>

@@ -9,7 +9,9 @@
   </head>
   <body>
     <!-- NAVIGATION -->
-    <nav class="flex justify-between items-center bg-violet-600 py-4 px-6">
+    <nav
+      class="flex justify-between items-center bg-violet-600 py-4 px-6 fixed top-0 w-dvw"
+    >
       <a href="/templates/index.html" class="text-white">
         <img src="/images/logo.svg" alt="logo" width="64" />
       </a>
@@ -51,11 +53,7 @@
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Outings</a
           >
-          <a
-            href="/templates/user/access.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Access</a
-          >
+
           <a class="block text-white px-4 py-2 bg-violet-900">+Info</a>
           <a
             href="/templates/user/alumni.html"
@@ -96,11 +94,7 @@
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Outings</a
         >
-        <a
-          href="/templates/user/access.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Access</a
-        >
+
         <a
           class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
           >+Info</a
@@ -156,7 +150,22 @@
       </div>
     </nav>
     <!-- BODY -->
-    <h1 class="m-4 lg:m-6">MORE INFO</h1>
+    <div
+      class="flex justify-center items-center min-h-[calc(100vh-62px)] my-20"
+    >
+      <div
+        id="moreInfoDiv"
+        class="grid grid-cols-1 md:grid-cols-3 max-w-4xl"
+      ></div>
+    </div>
+    <!-- FAB -->
+    <div id="FABDiv"></div>
+    <!-- FOOTER -->
+    <div id="FooterDiv"></div>
+
+    <script src="/components/FBA.js"></script>
+    <script src="/components/Footer.js"></script>
     <script src="/js/user/navbar.js"></script>
+    <script src="/js/user/more-info.js"></script>
   </body>
 </html>

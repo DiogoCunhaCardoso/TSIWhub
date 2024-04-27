@@ -9,7 +9,9 @@
   </head>
   <body>
     <!-- NAVIGATION -->
-    <nav class="flex justify-between items-center bg-violet-600 py-4 px-6">
+    <nav
+      class="flex justify-between items-center bg-violet-600 py-4 px-6 fixed top-0 w-dvw"
+    >
       <a href="/templates/index.html" class="text-white">
         <img src="/images/logo.svg" alt="logo" width="64" />
       </a>
@@ -51,11 +53,7 @@
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Outings</a
           >
-          <a
-            href="/templates/user/access.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Access</a
-          >
+
           <a
             href="/templates/user/more-info.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
@@ -96,11 +94,7 @@
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Outings</a
         >
-        <a
-          href="/templates/user/access.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Access</a
-        >
+
         <a
           href="/templates/user/more-info.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
@@ -156,7 +150,15 @@
       </div>
     </nav>
     <!-- BODY -->
+    <div class="my-20"></div>
     <h1 class="m-4 lg:m-6">SETTINGS</h1>
+    <!-- FAB -->
+    <div id="FABDiv"></div>
+    <!-- FOOTER -->
+    <div id="FooterDiv"></div>
+
+    <script src="/components/FBA.js"></script>
+    <script src="/components/Footer.js"></script>
     <script src="/js/user/navbar.js"></script>
   </body>
 </html>
