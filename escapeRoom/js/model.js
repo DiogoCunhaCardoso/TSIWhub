@@ -25,6 +25,7 @@ export const questions = {
         subtrair: 10,
         answer: 30,
       },
+
       text: `x = x\ny = y\ndef funcao():\n  global x\n  x += 2 * y\n    y += 3 * x\nfuncao()\nprint(x + y - subtrair)`,
     },
   },

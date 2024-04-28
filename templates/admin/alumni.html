@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Presentation</title>
+    <title>Admin - Alumni</title>
     <!-- Add Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -42,8 +42,8 @@
         <ul class="space-y-2 font-medium">
           <li>
             <a
-              href="#"
-              class="flex items-center p-2 text-white rounded-lg bg-violet-600 group"
+              href="/templates/index-admin.html"
+              class="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-lg group"
             >
               <span class="ms-3">Presentation</span>
             </a>
@@ -51,7 +51,7 @@
           <li>
             <a
               href="/templates/admin/study-plans.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+              class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Study Plans</span>
             </a>
@@ -59,7 +59,7 @@
           <li>
             <a
               href="/templates/admin/alumni.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+              class="flex items-center p-2 text-gray-900 rounded-lg text-white bg-violet-600 group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Alumni</span>
             </a>
@@ -102,78 +102,40 @@
     <!-- BODY -->
     <div class="p-4 sm:ml-64">
       <div class="p-4 border-2 bg-gray-100 rounded-lg">
-        <!-- BANNER GROUP -->
-        <div class="mb-10">
-          <div class="flex justify-between items-center mb-5">
-            <p class="font-medium text-lg">Banner</p>
-            <button
-              class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
-            >
-              Change
-            </button>
-          </div>
-          <div>
-            <img
-              class="rounded-lg shadow-sm"
-              src="https://placehold.co/480x270/dddddd/cccccc"
-              alt="banner image"
-            />
-          </div>
+        <!-- TABLE GROUP -->
+        <div class="flex justify-between items-center mb-5 mx-1">
+          <p class="font-medium text-lg">Alumnus</p>
+          <button
+            class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
+          >
+            Add
+          </button>
         </div>
-        <!-- GALLERY GROUP -->
-        <div>
-          <div class="flex justify-between items-center mb-5">
-            <p class="font-medium text-lg">Gallery</p>
-            <button
-              class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
-            >
-              Add
-            </button>
-          </div>
-          <div class="flex items-center gap-4 overflow-x-scroll">
-            <img
-              class="rounded-lg shadow-sm"
-              src="https://placehold.co/270x270/dddddd/cccccc"
-              alt="banner image"
-              width="270"
-              height="270"
-            />
-            <!--  <img class="" src="/images/icons/delete.svg" alt="delete" /> -->
 
-            <img
-              class="rounded-lg shadow-sm"
-              src="https://placehold.co/270x270/dddddd/cccccc"
-              alt="banner image"
-            />
-            <img
-              class="rounded-lg shadow-sm"
-              src="https://placehold.co/270x270/dddddd/cccccc"
-              alt="banner image"
-            />
-            <img
-              class="rounded-lg shadow-sm"
-              src="https://placehold.co/270x270/dddddd/cccccc"
-              alt="banner image"
-            />
-            <img
-              class="rounded-lg shadow-sm"
-              src="https://placehold.co/270x270/dddddd/cccccc"
-              alt="banner image"
-            />
-            <img
-              class="rounded-lg shadow-sm"
-              src="https://placehold.co/270x270/dddddd/cccccc"
-              alt="banner image"
-            />
-          </div>
-        </div>
+        <!-- TABLE -->
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+              <th scope="col" class="px-6 py-3">Name</th>
+              <th scope="col" class="px-6 py-3">Year</th>
+              <th scope="col" class="px-6 py-3">Image Path</th>
+              <th scope="col" class="px-6 py-3">Description</th>
+              <th scope="col" class="px-6 py-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- BODY COMES FROM JS -->
+          </tbody>
+        </table>
       </div>
     </div>
 
     <script>
       function logout() {
-        window.location.href = "login.html";
+        window.location.href = "../../templates/login.html";
       }
     </script>
+
+    <script type="module" src="/js/admin/alumni.js"></script>
   </body>
 </html>
