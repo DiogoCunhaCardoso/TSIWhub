@@ -150,8 +150,155 @@
       </div>
     </nav>
     <!-- BODY -->
-    <div class="my-20"></div>
-    <h1 class="m-4 lg:m-6">SETTINGS</h1>
+    <main class="flex justify-center">
+      <div class="my-24 m-8 mb-32 lg:mb-24 grid grid-cols-3 gap-5 max-w-7xl">
+        <!-- User Profile -->
+        <div
+          class="flex gap-5 items-center bg-gray-100 shadow-md p-6 lg:p-8 rounded-lg h-max col-span-3 lg:col-span-1"
+        >
+          <img
+            id="pfp"
+            class="rounded-full w-28 aspect-square object-cover"
+            src="https://placehold.co/112"
+            alt="profile picture"
+          />
+          <div class="flex flex-col gap-1">
+            <p id="usernameText" class="font-medium text-lg"></p>
+            <label
+              for="fileInput"
+              class="inline-block px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white cursor-pointer transition duration-300 ease-in-out"
+            >
+              Change Picture
+            </label>
+            <input type="file" id="fileInput" class="hidden" accept="image/*" />
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="col-span-3 lg:col-span-2">
+          <!-- GENERAL INFO -->
+          <div class="bg-gray-100 shadow-md p-6 lg:p-8 rounded-lg">
+            <h5 class="text-xl font-medium text-gray-900">General Info</h5>
+            <form action="">
+              <div class="flex flex-wrap gap-4 mt-5">
+                <div class="w-96">
+                  <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+                    placeholder="First Name"
+                    required
+                  />
+                </div>
+                <div class="w-96">
+                  <label
+                    for="surname"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    name="surname"
+                    id="surname"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+                    placeholder="Last Name"
+                    required
+                  />
+                </div>
+                <div class="w-96">
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+                    placeholder="name@email.com"
+                    required
+                  />
+                </div>
+              </div>
+              <button
+                id="saveInfo"
+                class="mt-6 px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
+              >
+                Save
+              </button>
+            </form>
+          </div>
+          <!-- GENERAL INFO -->
+          <div class="bg-gray-100 shadow-md p-6 lg:p-8 rounded-lg mt-5">
+            <h5 class="text-xl font-medium text-gray-900">
+              Password Information
+            </h5>
+            <form action="">
+              <div class="flex flex-wrap gap-4 mt-5">
+                <div class="w-96">
+                  <label
+                    for="current"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Current Password</label
+                  >
+                  <input
+                    type="password"
+                    name="current"
+                    id="currentPass"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+                    placeholder="Current Password"
+                    required
+                  />
+                </div>
+                <div class="w-96">
+                  <label
+                    for="new"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >New Password</label
+                  >
+                  <input
+                    type="password"
+                    name="new"
+                    id="newPass"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <div class="w-96">
+                  <label
+                    for="confPass"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Confirm New Password</label
+                  >
+                  <input
+                    type="password"
+                    name="confPass"
+                    id="pass"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+              </div>
+              <button
+                id="savePass"
+                class="mt-6 px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
+              >
+                Save
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- FAB -->
     <div id="FABDiv"></div>
     <!-- FOOTER -->
@@ -160,5 +307,6 @@
     <script src="/components/FAB.js"></script>
     <script src="/components/Footer.js"></script>
     <script src="/js/user/navbar.js"></script>
+    <script src="/js/user/settings.js"></script>
   </body>
 </html>

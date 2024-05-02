@@ -167,7 +167,7 @@ function chooseOptionAndSubmit(widget) {
     // Se a resposta estiver incorreta, mostrar um alerta de erro após um atraso
     setTimeout(function () {
       alert("Incorrect!");
-      time.tempoPerdido += 60;
+      time.tempoPerdido = 60;
     }, 200); // Defina o tempo de espera em milissegundos (1000 ms = 1 segundo)
   }
 }

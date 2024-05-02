@@ -42,14 +42,16 @@ body {
 }
 
 #timer {
-  padding: 4px;
+  padding: 12px;
   border: 2px solid #000000;
   font-weight: bolder;
   background: #ff0000;
+  border-radius: 4px;
   color: #ffffff;
   top: 10px;
   right: 10px;
   z-index: 100;
+  font-size: x-large;
 }
 
 /*  */

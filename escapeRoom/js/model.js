@@ -31,6 +31,7 @@ export const questions = {
   },
   Sistemas: {
     question1: {
+      text: `Convert binary binario to decimal`,
       variant1: {
         binario: "11001011",
         answer: "203",
@@ -51,7 +52,6 @@ export const questions = {
         binario: "10001111",
         answer: "143",
       },
-      text: `Convert binary binario to decimal`,
     },
     question2: {
       variant1: {
@@ -152,8 +152,8 @@ export const objects = [
 ];
 
 export const coords_bubble = [
-  10, 950, 310, 660, 460, 560, 920, 445, 880, 445, 500, 160, 1100, 410, 900,
-  245, 255, 525, 1510, 130,
+  610, 950, 310, 660, 460, 560, 920, 445, 880, 445, 500, 160, 1100, 410, 900,
+  245, 1510, 130,
 ];
 
 export const subjects = [

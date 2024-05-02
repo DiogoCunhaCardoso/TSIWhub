@@ -1,6 +1,6 @@
 const FooterHTML = `
     <footer
-      class="z-10 w-dvw p-4 border-t shadow md:flex md:items-center md:justify-between md:p-6 bg-gray-800 border-gray-600"
+      class="fixed bottom-0 z-10 w-dvw p-4 border-t shadow md:flex md:items-center md:justify-between md:p-6 bg-gray-800 border-gray-600"
     >
       <span class="text-sm text-gray-500 sm:text-center"
         >© 2024

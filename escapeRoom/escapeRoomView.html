@@ -3,9 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <title>Escape Room</title>
+
     <link rel="stylesheet" href="/escapeRoom/css/main.css" />
   </head>
   <body>
+    <a
+      href="/templates/index.html"
+      style="
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        width: 24px;
+        height: 24px;
+        background: #f00;
+        z-index: 100;
+      "
+    >
+    </a>
     <div id="popup">
       <div>
         <p id="close" style="background: blue; color: white; padding: 4px">
@@ -64,15 +78,6 @@
       </div>
 
       <div id="timer" class="timer_stuff">00:15:00</div>
-      <button class="timer_stuff" id="startTimer" onclick="startTimer()">
-        Start
-      </button>
-      <button class="timer_stuff" id="stopTimer" onclick="stopTimer()">
-        Stop
-      </button>
-      <button class="timer_stuff" id="resetTimer" onclick="resetTimer()">
-        Reset
-      </button>
     </div>
 
     <script defer type="module" src="/escapeRoom/js/model.js"></script>
