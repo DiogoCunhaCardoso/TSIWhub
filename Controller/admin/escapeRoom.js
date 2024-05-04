@@ -2,7 +2,6 @@ import { questions } from "../../escapeRoom/js/model.js";
 
 function createTables() {
   const tableWrapper = document.getElementById("tableWrapper");
-  console.log(Object.entries(questions));
 
   Object.entries(questions).forEach(([subjectName, subject]) => {
     const subjectParagraph = `<p class="font-medium text-lg mt-4">${subjectName}</p>`;
@@ -130,3 +129,63 @@ function createVariantRow(variant) {
 }
 
 window.onload = createTables;
+
+//
+//
+// ADD POP UP
+const btnAdd = document.getElementById("addToER");
+const closeIcon = document.getElementById("closePopUp");
+const popUp = document.getElementById("popup");
+const popUpForm = document.getElementById("popUpForm");
+const nextButton = document.getElementById("nextButton");
+const nextButtonSecond = document.getElementById("nextButtonSecond");
+
+// Close & Restart Pop-ups (Close Icon):
+closeIcon.addEventListener("click", () => {
+  popUpForm.style.display = "block";
+  popUpForm.nextElementSibling.style.display = "none"; // second pop up
+  popUp.classList.add("hidden");
+});
+
+// Open Pop-up (Add Button):
+btnAdd.addEventListener("click", () => {
+  popUp.classList.remove("hidden");
+});
+
+// Submit Pop-up Form:
+popUpForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const selectedSubject = document.getElementById("ucName").value;
+
+  if (selectedSubject !== "") {
+    // Close the first pop-up
+    popUp.classList.add("hidden");
+    // Open the second pop-up
+    popUpForm.reset();
+    popUpForm.style.display = "none";
+    popUpForm.nextElementSibling.style.display = "block";
+  } else {
+    console.error("Please select a subject");
+  }
+});
+
+// Navigate to Second Pop-up (Next Button):
+nextButton.addEventListener("click", () => {
+  popUpForm.style.display = "none";
+  popUpForm.nextElementSibling.style.display = "block";
+});
+
+// Handle Second Pop-up Submission (Next Button - Second Pop-up):
+nextButtonSecond.addEventListener("click", () => {
+  const x = document.getElementById("x").value;
+  const y = document.getElementById("y").value;
+  const answer = document.getElementById("answer").value;
+
+  // Add your logic here to handle the x, y, and answer values
+  console.log("X:", x);
+  console.log("Y:", y);
+  console.log("Answer:", answer);
+
+  popUp.classList.add("hidden");
+});

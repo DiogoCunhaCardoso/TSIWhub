@@ -19,7 +19,7 @@ const FooterHTML = `
           >
         </li>
         <li>
-          <a href="/templates/index.html" class="hover:underline">TSIW</a>
+          <a href="/View/index.html" class="hover:underline">TSIW</a>
         </li>
         <li>
           <p>Rua D. Sancho I, n.º 981</p>

@@ -1,4 +1,4 @@
-import { studyPlans } from "../data/outings.js";
+import { studyPlans } from "../../Model/outings.js";
 
 // Get the outingsDiv element
 const outingsDiv = document.getElementById("outingsDiv");

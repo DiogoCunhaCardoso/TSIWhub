@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Escape Room</title>
+    <!-- Add Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- MOBILE MENU -->
+    <button
+      data-drawer-target="default-sidebar"
+      data-drawer-toggle="default-sidebar"
+      aria-controls="default-sidebar"
+      type="button"
+      class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+    >
+      <span class="sr-only">Open sidebar</span>
+      <svg
+        class="w-6 h-6"
+        aria-hidden="true"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- MENU -->
+    <aside
+      id="default-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      aria-label="Sidebar"
+    >
+      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50">
+        <ul class="space-y-2 font-medium">
+          <li>
+            <a
+              href="/View/index-admin.html"
+              class="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-lg group"
+            >
+              <span class="ms-3">Presentation</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/View/admin/study-plans.html"
+              class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
+            >
+              <span class="flex-1 ms-3 whitespace-nowrap">Study Plans</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/View/admin/alumni.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg text-gray-900 hover:bg-gray-100 group"
+            >
+              <span class="flex-1 ms-3 whitespace-nowrap">Alumni</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-white rounded-lg bg-violet-600 group"
+            >
+              <span class="flex-1 ms-3 whitespace-nowrap">Escape Room</span>
+            </a>
+          </li>
+          <li onclick="logout()">
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+            >
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 16"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
+                ></path>
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- BODY -->
+    <div class="p-4 sm:ml-64">
+      <div class="p-4 border-2 bg-gray-100 rounded-lg">
+        <!-- TABLE GROUP -->
+        <div class="flex justify-between items-center mb-5 mx-1">
+          <p class="font-medium text-lg">Questions</p>
+          <button
+            id="addToER"
+            class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
+          >
+            Add
+          </button>
+        </div>
+        <!-- TABLE GROUP -->
+        <div id="tableWrapper" class="mt-8 overflow-x-scroll">
+          <!-- Tables will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- POP UP ADD -->
+    <div
+      id="popup"
+      class="fixed hidden z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div class="relative w-96">
+        <img
+          id="closePopUp"
+          src="/images/icons/close.svg"
+          class="absolute top-4 right-4 w-4 h-4 hover:scale-125 transition cursor-pointer"
+          alt="close"
+        />
+        <form class="space-y-4 bg-white p-8 rounded-lg" id="popUpForm">
+          <h5 class="text-xl font-medium text-gray-900">Create New Variant</h5>
+          <!-- Select field -->
+          <div>
+            <label
+              for="ucName"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Select a Subject</label
+            >
+            <select
+              name="ucName"
+              id="ucName"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              required
+            >
+              <option value="" disabled selected>Select a Subject</option>
+              <option value="Algoritmia e Estruturas de Dados">
+                Algoritmia e Estruturas de Dados
+              </option>
+              <option value="Sistemas Computacionais">
+                Sistemas Computacionais
+              </option>
+              <option value="Tecnologias Web">Tecnologias Web</option>
+              <option value="Conceção e Produção Multimédia">
+                Conceção e Produção Multimédia
+              </option>
+              <option value="Matemática II">Matemática II</option>
+            </select>
+          </div>
+          <button
+            id="nextButton"
+            type="button"
+            class="w-full hover:scale-[1.02] transition text-white bg-violet-600 hover:bg-violet-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          >
+            Next
+          </button>
+        </form>
+        <!-- Second pop-up for entering x, y, and answer -->
+        <form
+          class="space-y-4 bg-white p-8 rounded-lg hidden"
+          id="popUpFormSecond"
+        >
+          <h5 class="text-xl font-medium text-gray-900">Enter Values</h5>
+          <div>
+            <label for="x" class="block mb-2 text-sm font-medium text-gray-900"
+              >X</label
+            >
+            <input
+              type="text"
+              id="x"
+              name="x"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              required
+            />
+          </div>
+          <div>
+            <label for="y" class="block mb-2 text-sm font-medium text-gray-900"
+              >Y</label
+            >
+            <input
+              type="text"
+              id="y"
+              name="y"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="answer"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Answer</label
+            >
+            <input
+              type="text"
+              id="answer"
+              name="answer"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              required
+            />
+          </div>
+          <button
+            id="nextButtonSecond"
+            type="button"
+            class="w-full hover:scale-[1.02] transition text-white bg-violet-600 hover:bg-violet-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function logout() {
+        window.location.href = "../../View/login.html";
+      }
+    </script>
+
+    <script type="module" src="/Controller/admin/escapeRoom.js"></script>
+  </body>
+</html>

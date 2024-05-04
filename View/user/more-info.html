@@ -12,7 +12,7 @@
     <nav
       class="flex justify-between items-center bg-violet-600 py-4 px-6 fixed top-0 w-dvw"
     >
-      <a href="/templates/index.html" class="text-white">
+      <a href="/View/index.html" class="text-white">
         <img src="/images/logo.svg" alt="logo" width="64" />
       </a>
       <!-- Mobile Menu -->
@@ -39,38 +39,39 @@
           class="hidden bg-gray-800 absolute top-[53.6px] left-0 right-0 z-10 py-2"
         >
           <a
-            href="/templates/index.html"
+            href="/View/index.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Presentation</a
           >
           <a
-            href="/templates/user/study-plans.html"
+            href="/View/user/study-plans.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Study Plans</a
           >
           <a
-            href="/templates/user/outings.html"
+            href="/View/user/outings.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Outings</a
           >
+
+          <a class="block text-white px-4 py-2 bg-violet-900">+Info</a>
           <a
-            href="/templates/user/more-info.html"
+            href="/View/user/alumni.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
-            >+Info</a
+            >Alumni</a
           >
-          <a class="block text-white px-4 py-2 bg-violet-900">Alumni</a>
           <a
-            href="/templates/user/projects.html"
+            href="/View/user/projects.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Projects</a
           >
           <a
-            href="/templates/user/settings.html"
+            href="/View/user/settings.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Settings</a
           >
           <a
-            href="/templates/login.html"
+            href="/View/login.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Sign Out</a
           >
@@ -79,32 +80,32 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex gap-2 flex justify-center items-center">
         <a
-          href="/templates/index.html"
+          href="/View/index.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Presentation</a
         >
         <a
-          href="/templates/user/study-plans.html"
+          href="/View/user/study-plans.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Study Plans</a
         >
         <a
-          href="/templates/user/outings.html"
+          href="/View/user/outings.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Outings</a
         >
 
         <a
-          href="/templates/user/more-info.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
+          class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
           >+Info</a
         >
         <a
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
+          href="/View/user/alumni.html"
+          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Alumni</a
         >
         <a
-          href="/templates/user/projects.html"
+          href="/View/user/projects.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Projects</a
         >
@@ -131,7 +132,7 @@
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
               <li>
                 <a
-                  href="/templates/user/settings.html"
+                  href="/View/user/settings.html"
                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                   >Settings</a
                 >
@@ -139,7 +140,7 @@
             </ul>
             <div class="py-1">
               <a
-                href="/templates/login.html"
+                href="/View/login.html"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >Sign out</a
               >
@@ -149,28 +150,12 @@
       </div>
     </nav>
     <!-- BODY -->
-    <main
-      class="my-24 mx-5 flex justify-center flex-col items-center min-h-[calc(100vh-200px)] my-24 m-8 mb-32 lg:mb-24"
-    >
-      <a
-        class="px-8 py-2 gap-4 flex items-center rounded-lg bg-gray-800 max-w-xl"
-      >
-        <img
-          class="object-cover rounded-full h-20 aspect-square"
-          src="${image}"
-          alt=""
-        />
-        <div class="flex flex-col justify-between p-4">
-          <h5 class="text-lg font-bold text-white">${name}</h5>
-          <p class="mb-3 text-sm text-gray-400">Término do curso: ${date}</p>
-          <h5 class="text-lg font-bold text-white">Testemunho</h5>
-          <p class="mb-3 text-sm text-gray-400">${description}</p>
-        </div>
-      </a>
-      <!-- Four smaller cards -->
-      <div id="allCards" class="flex flex-wrap justify-center mt-6 gap-6"></div>
-    </main>
-
+    <div class="flex justify-center items-center min-h-[calc(100vh-62px)]">
+      <div
+        id="moreInfoDiv"
+        class="grid grid-cols-1 md:grid-cols-3 max-w-4xl"
+      ></div>
+    </div>
     <!-- FAB -->
     <div id="FABDiv"></div>
     <!-- FOOTER -->
@@ -178,7 +163,7 @@
 
     <script src="/components/FAB.js"></script>
     <script src="/components/Footer.js"></script>
-    <script src="/js/user/navbar.js"></script>
-    <script type="module" src="/js/user/alumni.js"></script>
+    <script src="/Controller/user/navbar.js"></script>
+    <script type="module" src="/Controller/user/more-info.js"></script>
   </body>
 </html>

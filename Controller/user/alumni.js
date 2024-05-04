@@ -1,4 +1,4 @@
-import { alumni } from "../data/alumni.js";
+import { alumni } from "../../Model/alumni.js";
 
 // Function to handle click event on info cards
 document.querySelectorAll(".info-card").forEach((card, index) => {

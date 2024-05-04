@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Escape Room</title>
+    <title>Admin - Presentation</title>
     <!-- Add Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -42,32 +42,32 @@
         <ul class="space-y-2 font-medium">
           <li>
             <a
-              href="/templates/index-admin.html"
-              class="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-lg group"
+              href="#"
+              class="flex items-center p-2 text-white rounded-lg bg-violet-600 group"
             >
               <span class="ms-3">Presentation</span>
             </a>
           </li>
           <li>
             <a
-              href="/templates/admin/study-plans.html"
-              class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
+              href="/View/admin/study-plans.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Study Plans</span>
             </a>
           </li>
           <li>
             <a
-              href="/templates/admin/alumni.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg text-gray-900 hover:bg-gray-100 group"
+              href="/View/admin/alumni.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Alumni</span>
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="flex items-center p-2 text-white rounded-lg bg-violet-600 group"
+              href="/View/admin/escapeRoom.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Escape Room</span>
             </a>
@@ -90,7 +90,7 @@
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
-                ></path>
+                />
               </svg>
               <span class="flex-1 ms-3 whitespace-nowrap">Log Out</span>
             </a>
@@ -102,28 +102,66 @@
     <!-- BODY -->
     <div class="p-4 sm:ml-64">
       <div class="p-4 border-2 bg-gray-100 rounded-lg">
-        <!-- TABLE GROUP -->
-        <div class="flex justify-between items-center mb-5 mx-1">
-          <p class="font-medium text-lg">Questions</p>
-          <button
-            class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
-          >
-            Add
-          </button>
+        <!-- BANNER GROUP -->
+        <div class="mb-10">
+          <div class="flex justify-between items-center mb-5">
+            <p class="font-medium text-lg">Banner</p>
+            <label
+              for="bannerUpload"
+              class="inline-block px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition cursor-pointer"
+              >Change</label
+            >
+            <input
+              type="file"
+              id="bannerUpload"
+              class="hidden"
+              accept="image/*"
+            />
+          </div>
+          <div>
+            <img
+              id="bannerImage"
+              class="rounded-lg shadow-md object-cover w-full h-[270px]"
+              src="https://placehold.co/480x270/dddddd/cccccc"
+              alt="banner image"
+              width="480"
+              height="270"
+            />
+          </div>
         </div>
-        <!-- TABLE GROUP -->
-        <div id="tableWrapper" class="mt-8">
-          <!-- Tables will be dynamically inserted here -->
+        <!-- GALLERY GROUP -->
+        <div>
+          <div class="flex justify-between items-center mb-5">
+            <p class="font-medium text-lg">Gallery</p>
+            <label
+              for="galleryUpload"
+              class="inline-block px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition cursor-pointer"
+              >Add</label
+            >
+            <input
+              type="file"
+              id="galleryUpload"
+              class="hidden"
+              accept="image/*"
+              multiple
+            />
+          </div>
+          <div
+            id="wholeGallery"
+            class="flex items-center gap-4 overflow-x-scroll"
+          >
+            <!-- Gallery dinamically here -->
+          </div>
         </div>
       </div>
     </div>
 
+    <script type="module" src="/Controller/admin/presentation.js"></script>
+
     <script>
       function logout() {
-        window.location.href = "../../templates/login.html";
+        window.location.href = "login.html";
       }
     </script>
-
-    <script type="module" src="/js/admin/escapeRoom.js"></script>
   </body>
 </html>

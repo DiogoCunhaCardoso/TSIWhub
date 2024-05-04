@@ -1,4 +1,4 @@
-import { studyPlans } from "../data/study-plans.js";
+import { studyPlans } from "../../Model/study-plans.js";
 
 // Function to generate tables for each year
 function generateStudyPlanTables() {

@@ -12,7 +12,7 @@
     <nav
       class="flex justify-between items-center bg-violet-600 py-4 px-6 fixed top-0 w-dvw"
     >
-      <a href="/templates/index.html" class="text-white">
+      <a href="/View/index.html" class="text-white">
         <img src="/images/logo.svg" alt="logo" width="64" />
       </a>
       <!-- Mobile Menu -->
@@ -39,39 +39,39 @@
           class="hidden bg-gray-800 absolute top-[53.6px] left-0 right-0 z-10 py-2"
         >
           <a
-            href="/templates/index.html"
+            href="/View/index.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Presentation</a
           >
-          <a class="block text-white px-4 py-2 bg-violet-900">Study Plans</a>
           <a
-            href="/templates/user/outings.html"
+            href="/View/user/study-plans.html"
+            class="block text-white px-4 py-2 hover:bg-violet-500"
+            >Study Plans</a
+          >
+          <a
+            href="/View/user/outings.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Outings</a
           >
 
           <a
-            href="/templates/user/more-info.html"
+            href="/View/user/more-info.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >+Info</a
           >
           <a
-            href="/templates/user/alumni.html"
+            href="/View/user/alumni.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Alumni</a
           >
+          <a class="block text-white px-4 py-2 bg-violet-900">Projects</a>
           <a
-            href="/templates/user/projects.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Projects</a
-          >
-          <a
-            href="/templates/user/settings.html"
+            href="/View/user/settings.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Settings</a
           >
           <a
-            href="/templates/login.html"
+            href="/View/login.html"
             class="block text-white px-4 py-2 hover:bg-violet-500"
             >Sign Out</a
           >
@@ -80,33 +80,33 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex gap-2 flex justify-center items-center">
         <a
-          href="/templates/index.html"
+          href="/View/index.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Presentation</a
         >
         <a
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
+          href="/View/user/study-plans.html"
+          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Study Plans</a
         >
         <a
-          href="/templates/user/outings.html"
+          href="/View/user/outings.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Outings</a
         >
 
         <a
-          href="/templates/user/more-info.html"
+          href="/View/user/more-info.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >+Info</a
         >
         <a
-          href="/templates/user/alumni.html"
+          href="/View/user/alumni.html"
           class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
           >Alumni</a
         >
         <a
-          href="/templates/user/projects.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
+          class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
           >Projects</a
         >
         <!-- Avatar and Dropdown -->
@@ -132,7 +132,7 @@
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
               <li>
                 <a
-                  href="/templates/user/settings.html"
+                  href="/View/user/settings.html"
                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                   >Settings</a
                 >
@@ -140,7 +140,7 @@
             </ul>
             <div class="py-1">
               <a
-                href="/templates/login.html"
+                href="/View/login.html"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >Sign out</a
               >
@@ -149,21 +149,95 @@
         </div>
       </div>
     </nav>
-    <!-- BODY -->
-    <div class="mx-auto max-w-4xl my-24 m-8 mb-32 lg:mb-24">
-      <div class="grid lg:mx-10 mx-4" id="studyPlansContainer">
-        <!-- All Tables Here -->
-      </div>
-    </div>
-
     <!-- FAB -->
+    <h1 class="m-4 lg:m-6">PROJECTS</h1>
     <div id="FABDiv"></div>
+
+    <!-- CONTENT -->
+    <main class="m-4 lg:m-12 flex justify-center my-20">
+      <div class="w-full relative max-w-2xl" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-96 overflow-hidden rounded-lg mx-4">
+          <!-- PROJECT 1 -->
+          <div data-carousel-item class="text-center">
+            <img
+              src="https://placehold.co/600x400"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 px-4 py-2"
+            >
+              <p class="text-black font-semibold">Projeto 1</p>
+              <p class="text-gray-600">
+                Lorem ipsum dolor sit amet adipiscing elit.
+              </p>
+            </div>
+          </div>
+          <!-- PROJECT 2 -->
+          <div data-carousel-item class="text-center">
+            <img
+              src="https://placehold.co/600x410"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 px-4 py-2"
+            >
+              <p class="text-black font-semibold">Projeto 2</p>
+              <p class="text-gray-600">
+                Lorem dolor sit amet consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+          <!-- PROJECT 3 -->
+          <div data-carousel-item class="text-center">
+            <img
+              src="https://placehold.co/600x420"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 px-4 py-2"
+            >
+              <p class="text-black font-semibold">Projeto 3</p>
+              <p class="text-gray-600">
+                Lipsum dolor amet consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Slider controls -->
+        <button
+          class="absolute top-1/2 left-0 transform -translate-y-1/2"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 shadow-lg"
+          >
+            <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-width="2" d="M5 1 1 5l4 4" />
+            </svg>
+          </span>
+        </button>
+        <button
+          class="absolute top-1/2 right-0 transform -translate-y-1/2"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 shadow-lg"
+          >
+            <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-width="2" d="m1 9 4-4-4-4" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </main>
+
     <!-- FOOTER -->
     <div id="FooterDiv"></div>
 
     <script src="/components/FAB.js"></script>
     <script src="/components/Footer.js"></script>
-    <script src="/js/user/navbar.js"></script>
-    <script type="module" src="/js/user/study-plans.js"></script>
+    <script src="/Controller/user/navbar.js"></script>
+    <script src="/Controller/user/projects.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import { moreInfo } from "../data/more-info.js";
+import { moreInfo } from "../../Model/more-info.js";
 
 const moreInfoDiv = document.getElementById("moreInfoDiv");
 
