@@ -4,151 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSIW hub</title>
-    <!-- Add Tailwind CSS via CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <!-- NAVIGATION -->
-    <nav
-      class="flex justify-between items-center bg-violet-600 py-4 px-6 fixed top-0 w-dvw"
-    >
-      <a href="/View/index.html" class="text-white">
-        <img src="/images/logo.svg" alt="logo" width="64" />
-      </a>
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <!-- Hamburger menu button for Mobile -->
-        <button id="mobileMenuToggle" class="text-white">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-        <!-- Dropdown Menu for Mobile -->
-        <div
-          id="mobileDropdown"
-          class="hidden bg-gray-800 absolute top-[53.6px] left-0 right-0 z-10 py-2"
-        >
-          <a
-            href="/View/index.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Presentation</a
-          >
-          <a
-            href="/View/user/study-plans.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Study Plans</a
-          >
-          <a
-            href="/View/user/outings.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Outings</a
-          >
-
-          <a class="block text-white px-4 py-2 bg-violet-900">+Info</a>
-          <a
-            href="/View/user/alumni.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Alumni</a
-          >
-          <a
-            href="/View/user/projects.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Projects</a
-          >
-          <a
-            href="/View/user/settings.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Settings</a
-          >
-          <a
-            href="/View/login.html"
-            class="block text-white px-4 py-2 hover:bg-violet-500"
-            >Sign Out</a
-          >
-        </div>
-      </div>
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex gap-2 flex justify-center items-center">
-        <a
-          href="/View/index.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Presentation</a
-        >
-        <a
-          href="/View/user/study-plans.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Study Plans</a
-        >
-        <a
-          href="/View/user/outings.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Outings</a
-        >
-
-        <a
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md bg-violet-900"
-          >+Info</a
-        >
-        <a
-          href="/View/user/alumni.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Alumni</a
-        >
-        <a
-          href="/View/user/projects.html"
-          class="text-white font-semibold text-sm px-2 py-1 rounded-md hover:bg-violet-700"
-          >Projects</a
-        >
-        <!-- Avatar and Dropdown -->
-        <div class="relative" id="avatarContainer">
-          <div
-            id="avatarBtn"
-            class="w-8 h-8 rounded-full cursor-pointer bg-gray-100 flex items-center justify-center"
-          >
-            <span
-              id="avatarInitials"
-              class="font-medium text-gray-600 dark:text-violet-900 select-none pointer-events-none"
-            ></span>
-          </div>
-          <!-- User Dropdown Menu -->
-          <div
-            id="avatarDropdown"
-            class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute top-12 right-0 mt-2 dark:bg-gray-700 dark:divide-gray-600"
-          >
-            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-              <div class="font-medium truncate" id="avatarFullName"></div>
-              <div id="avatarEmail"></div>
-            </div>
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
-              <li>
-                <a
-                  href="/View/user/settings.html"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >Settings</a
-                >
-              </li>
-            </ul>
-            <div class="py-1">
-              <a
-                href="/View/login.html"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >Sign out</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <div id="navbar"></div>
     <!-- BODY -->
     <div class="flex justify-center items-center min-h-[calc(100vh-62px)]">
       <div
@@ -163,6 +24,14 @@
 
     <script src="/components/FAB.js"></script>
     <script src="/components/Footer.js"></script>
+    <script src="/components/Navbar.js"></script>
+    <!-- SELECTED INDEX -->
+    <script>
+      const selectedItem = "+Info";
+      const navbarHTML = createNavbar(selectedItem);
+      document.getElementById("navbar").innerHTML = navbarHTML;
+    </script>
+    <!--  -->
     <script src="/Controller/user/navbar.js"></script>
     <script type="module" src="/Controller/user/more-info.js"></script>
   </body>
