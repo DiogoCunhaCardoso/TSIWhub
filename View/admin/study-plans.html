@@ -72,7 +72,7 @@
               <span class="flex-1 ms-3 whitespace-nowrap">Escape Room</span>
             </a>
           </li>
-          <li onclick="logout()">
+          <li id="logoutButton">
             <a
               href="#"
               class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
@@ -170,7 +170,7 @@
               >Year</label
             >
             <input
-              type="text"
+              type="number"
               name="year"
               id="year"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
@@ -185,7 +185,7 @@
               >Semester</label
             >
             <input
-              type="text"
+              type="number"
               name="semester"
               id="semester"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
@@ -200,7 +200,7 @@
               >ECTs Count</label
             >
             <input
-              type="text"
+              type="number"
               name="ects"
               id="ects"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
@@ -218,12 +218,39 @@
       </div>
     </div>
 
-    <script>
-      function logout() {
-        window.location.href = "../../View/login.html";
-      }
-    </script>
+    <!-- CONFIRM MODAL -->
+    <div
+      id="popup-confirm"
+      class="fixed hidden z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div class="relative p-4 w-full max-w-md max-h-full">
+        <div class="relative bg-white rounded-lg shadow">
+          <div class="p-4 text-center">
+            <h3 class="mb-5 text-lg font-normal text-gray-500">
+              Are you sure you want to delete this UC?
+            </h3>
+            <div class="flex justify-center">
+              <button
+                id="DoDelete"
+                type="button"
+                class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 mr-3"
+              >
+                Yes, I'm sure
+              </button>
+              <button
+                id="DoNotDelete"
+                type="button"
+                class="text-gray-900 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5"
+              >
+                No, cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="/Controller/admin/study-plans.js"></script>
+    <script type="module" src="/utils/logout.js"></script>
   </body>
 </html>

@@ -1,6 +1,9 @@
 // Get user data by email from localStorage
 function getUserDataByEmail(email) {
-  return JSON.parse(localStorage.getItem(email));
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  // Find the user with the provided email
+  const userData = users.find((user) => user.email === email);
+  return userData;
 }
 
 const loggedInEmail = localStorage.getItem("loggedInUser");

@@ -72,7 +72,7 @@
               <span class="flex-1 ms-3 whitespace-nowrap">Escape Room</span>
             </a>
           </li>
-          <li onclick="logout()">
+          <li id="logoutButton">
             <a
               href="#"
               class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
@@ -223,12 +223,7 @@
       </div>
     </div>
 
-    <script>
-      function logout() {
-        window.location.href = "../../View/login.html";
-      }
-    </script>
-
     <script type="module" src="/Controller/admin/escapeRoom.js"></script>
+    <script type="module" src="/utils/logout.js"></script>
   </body>
 </html>

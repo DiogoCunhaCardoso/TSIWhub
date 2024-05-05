@@ -72,7 +72,7 @@
               <span class="flex-1 ms-3 whitespace-nowrap">Escape Room</span>
             </a>
           </li>
-          <li onclick="logout()">
+          <li id="logoutButton">
             <a
               href="#"
               class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
@@ -121,7 +121,7 @@
           <div>
             <img
               id="bannerImage"
-              class="rounded-lg shadow-md object-cover w-full h-[270px]"
+              class="rounded-lg shadow-md object-cover w-[480px] h-[270px]"
               src="https://placehold.co/480x270/dddddd/cccccc"
               alt="banner image"
               width="480"
@@ -157,11 +157,6 @@
     </div>
 
     <script type="module" src="/Controller/admin/presentation.js"></script>
-
-    <script>
-      function logout() {
-        window.location.href = "login.html";
-      }
-    </script>
+    <script type="module" src="/utils/logout.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import { questions } from "../../escapeRoom/js/model.js";
+import { questions } from "../../escapeRoom/Controller/model.js";
 
 function createTables() {
   const tableWrapper = document.getElementById("tableWrapper");

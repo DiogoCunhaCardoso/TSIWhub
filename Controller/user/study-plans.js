@@ -1,12 +1,17 @@
-import { studyPlans } from "../../Model/study-plans.js";
+import { studyPlans as studyPlansModel } from "../../Model/study-plans.js";
+
+const studyPlansLS = JSON.parse(
+  localStorage.getItem("studyPlans") ||
+    localStorage.setItem("studyPlans", JSON.stringify(studyPlansModel))
+);
 
 // Function to generate tables for each year
 function generateStudyPlanTables() {
   const studyPlansContainer = document.getElementById("studyPlansContainer");
 
   // Loop through each year in the studyPlans array
-  Object.keys(studyPlans).forEach((year) => {
-    const yearData = studyPlans[year];
+  Object.keys(studyPlansLS).forEach((year) => {
+    const yearData = studyPlansLS[year];
 
     // Create a new table element
     const table = document.createElement("table");

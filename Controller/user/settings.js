@@ -2,84 +2,68 @@
 const username = document.getElementById("usernameText");
 const firstName = document.getElementById("name");
 const lastName = document.getElementById("surname");
-const email = document.getElementById("email");
+const emailInput = document.getElementById("email");
 
 // Pass
 const currentPass = document.getElementById("currentPass");
 const newPass = document.getElementById("newPass");
 const confPass = document.getElementById("confPass");
 
-//Photo Stuff
+// Photo Stuff
 const pfp = document.getElementById("pfp");
 const inputPhoto = document.getElementById("fileInput");
 
-// buttons
+// Buttons
 const saveInfo = document.getElementById("saveInfo");
 const savePass = document.getElementById("savePass");
 
-// Get user data by email from localStorage
-function getUserDataByEmail(email) {
-  return JSON.parse(localStorage.getItem(email));
+// Get users array from localStorage
+const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+// Function to find user by email in the users array
+function getUserByEmail(email) {
+  return users.find((user) => user.email === email);
 }
 
-function changeUserData(userData) {
+// Function to update input values with user data
+function updateInputValues(userData) {
   if (userData) {
     username.innerHTML = `${userData.name} ${userData.surname}`;
     firstName.value = `${userData.name}`;
     lastName.value = `${userData.surname}`;
-    email.value = `${userData.email}`;
+    emailInput.value = `${userData.email}`;
   }
 }
 
-function updateInputValues() {
-  const userData = getUserDataByEmail(loggedInEmail);
-  if (userData) {
-    username.innerHTML = `${userData.name} ${userData.surname}`;
-    firstName.value = `${userData.name}`;
-    lastName.value = `${userData.surname}`;
-    email.value = `${userData.email}`;
-  }
-}
-
-let userData; // Declare userData outside of the if block
-
-changeUserData(getUserDataByEmail(loggedInEmail));
-
-// DISPLAY INFO FROM LOCAL STORAGE
+// Display user info from localStorage
 if (loggedInEmail) {
-  userData = getUserDataByEmail(loggedInEmail); // Assign userData inside the if block
-  if (userData) {
-    username.innerHTML = `${userData.name} ${userData.surname}`;
-    firstName.value = `${userData.name}`;
-    lastName.value = `${userData.surname}`;
-    email.value = `${userData.email}`;
-  }
+  const userData = getUserByEmail(loggedInEmail);
+  updateInputValues(userData);
 
-  // CHANGE INFO
+  // Change Info
   saveInfo.addEventListener("click", function (e) {
     e.preventDefault();
 
     const newUserData = {
       name: firstName.value,
       surname: lastName.value,
-      email: email.value,
-      password: userData.password, //buscar pass antiga,
+      email: emailInput.value,
+      password: userData.password,
       role: "user",
     };
-    if (email.value === userData.email) {
-      localStorage.setItem(userData.email, JSON.stringify(newUserData));
-    } else {
-      localStorage.removeItem(userData.email);
-      userData.email = email.value;
-      localStorage.setItem(email.value, JSON.stringify(newUserData));
-      localStorage.setItem("loggedInUser", email.value);
-    }
 
-    updateInputValues();
+    // Update user data in users array
+    const index = users.findIndex((user) => user.email === userData.email);
+    if (index !== -1) {
+      users[index] = newUserData;
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("loggedInUser", emailInput.value);
+      updateInputValues(newUserData);
+    }
   });
 }
 
-// ADD PFP
+// Add PFP
 inputPhoto.addEventListener("change", () => {
   if (inputPhoto.files && inputPhoto.files[0]) {
     const reader = new FileReader();
@@ -90,16 +74,10 @@ inputPhoto.addEventListener("change", () => {
   }
 });
 
-//
-//
-//
-//
-//
-// CORRECT NewPass ConfPass
-
-//CHANGE PASS
+// Change Pass
 savePass.addEventListener("click", (e) => {
   e.preventDefault();
+  const userData = getUserByEmail(loggedInEmail);
   if (!userData || userData.password !== currentPass.value) {
     alert("Incorrect current password");
     return;
@@ -115,7 +93,11 @@ savePass.addEventListener("click", (e) => {
     return;
   } else {
     userData.password = newPass.value;
-    localStorage.setItem(userData.email, JSON.stringify(userData));
+    const index = users.findIndex((user) => user.email === userData.email);
+    if (index !== -1) {
+      users[index] = userData;
+      localStorage.setItem("users", JSON.stringify(users));
+    }
     alert("Password changed successfully");
 
     currentPass.value = "";

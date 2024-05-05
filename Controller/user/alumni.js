@@ -1,4 +1,9 @@
-import { alumni } from "../../Model/alumni.js";
+import { alumni as alumniModel } from "../../Model/alumni.js";
+
+const alumnusLS = JSON.parse(
+  localStorage.getItem("alumnus") ||
+    localStorage.setItem("alumnus", JSON.stringify(alumniModel))
+);
 
 // Function to handle click event on info cards
 document.querySelectorAll(".info-card").forEach((card, index) => {
@@ -11,7 +16,7 @@ document.querySelectorAll(".info-card").forEach((card, index) => {
     card.querySelector("img").classList.add("border", "border-violet-500");
     // Update content in the main card
     const mainCard = document.querySelector("main > a");
-    const { image, name, date, description } = alumni[index];
+    const { image, name, date, description } = alumnusLS[index];
     mainCard.querySelector("img").setAttribute("src", image);
     mainCard.querySelector("h5").innerText = name;
     mainCard.querySelector(
@@ -63,7 +68,7 @@ function createInfoCard(alumnus) {
 
 // Populate smaller cards
 const infoCardsContainer = document.getElementById("allCards");
-alumni.forEach((alumnus, index) => {
+alumnusLS.forEach((alumnus, index) => {
   const card = createInfoCard(alumnus);
   card.addEventListener("click", () => {
     // Remove border from all cards
@@ -97,7 +102,7 @@ document
   .querySelector(".info-card")
   .classList.add("border", "border-violet-500");
 const mainCard = document.querySelector("main > a");
-const { image, name, date, description } = alumni[0];
+const { image, name, date, description } = alumnusLS[0];
 mainCard.querySelector("img").setAttribute("src", image);
 mainCard.querySelector("h5").innerText = name;
 mainCard.querySelector(
