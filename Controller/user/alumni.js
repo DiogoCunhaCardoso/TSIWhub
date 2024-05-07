@@ -6,6 +6,19 @@ const alumnusLS = JSON.parse(
 );
 
 // Function to handle click event on info cards
+function updateMainCard(index) {
+  const { image, name, date, description } = alumnusLS[index];
+  const mainImage = document.getElementById("mainImage");
+  const mainName = document.getElementById("mainName");
+  const mainDate = document.getElementById("mainDate");
+  const mainDescription = document.getElementById("mainDescription");
+
+  mainImage.setAttribute("src", image);
+  mainName.innerText = name;
+  mainDate.innerText = `Término do curso: ${date}`;
+  mainDescription.innerText = description;
+}
+
 document.querySelectorAll(".info-card").forEach((card, index) => {
   card.addEventListener("click", () => {
     // Remove border from all cards
@@ -15,20 +28,9 @@ document.querySelectorAll(".info-card").forEach((card, index) => {
     // Add border to clicked card's image
     card.querySelector("img").classList.add("border", "border-violet-500");
     // Update content in the main card
-    const mainCard = document.querySelector("main > a");
-    const { image, name, date, description } = alumnusLS[index];
-    mainCard.querySelector("img").setAttribute("src", image);
-    mainCard.querySelector("h5").innerText = name;
-    mainCard.querySelector(
-      "p:first-of-type"
-    ).innerText = `Término do curso: ${date}`;
-    mainCard.querySelector("p:nth-of-type(2)").innerText = description;
+    updateMainCard(index);
   });
 });
-
-//
-//
-// Smaller Cards
 
 // Function to create an info card element
 function createInfoCard(alumnus) {
@@ -78,14 +80,7 @@ alumnusLS.forEach((alumnus, index) => {
     // Add border to clicked card
     card.classList.add("border", "border-violet-500");
     // Update content in the main card
-    const mainCard = document.querySelector("main > a");
-    mainCard.querySelector("img").setAttribute("src", alumnus.image);
-    mainCard.querySelector("h5").innerText = alumnus.name;
-    mainCard.querySelector(
-      "p:first-of-type"
-    ).innerText = `Término do curso: ${alumnus.date}`;
-    mainCard.querySelector("p:nth-of-type(2)").innerText = "Testemunho";
-    mainCard.querySelector("p:nth-of-type(3)").innerText = alumnus.description;
+    updateMainCard(index);
   });
   infoCardsContainer.appendChild(card);
 });
@@ -94,18 +89,4 @@ alumnusLS.forEach((alumnus, index) => {
 document
   .querySelector(".info-card")
   .classList.add("border", "border-violet-500");
-
-//
-//
-// Initialize the first card as selected by default
-document
-  .querySelector(".info-card")
-  .classList.add("border", "border-violet-500");
-const mainCard = document.querySelector("main > a");
-const { image, name, date, description } = alumnusLS[0];
-mainCard.querySelector("img").setAttribute("src", image);
-mainCard.querySelector("h5").innerText = name;
-mainCard.querySelector(
-  "p:first-of-type"
-).innerText = `Término do curso: ${date}`;
-mainCard.querySelector("p:nth-of-type(2)").innerText = description;
+updateMainCard(0);

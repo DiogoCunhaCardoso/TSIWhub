@@ -15,18 +15,19 @@
       class="my-24 mx-5 flex justify-center flex-col items-center min-h-[calc(100vh-200px)] m-8 mb-32 lg:mb-24"
     >
       <a
+        id="mainCard"
         class="px-8 py-2 gap-4 flex items-center rounded-lg bg-gray-800 max-w-xl"
       >
         <img
+          id="mainImage"
           class="object-cover rounded-full h-20 aspect-square"
           alt="alumni"
         />
         <div class="flex flex-col justify-between p-4">
-          <!-- substituido por JS -->
-          <h5 class="text-lg font-bold text-white">${name}</h5>
-          <p class="mb-3 text-sm text-gray-400">Término do curso: ${date}</p>
+          <h5 id="mainName" class="text-lg font-bold text-white"></h5>
+          <p id="mainDate" class="mb-3 text-sm text-gray-400"></p>
           <h5 class="text-lg font-bold text-white">Testemunho</h5>
-          <p class="mb-3 text-sm text-gray-400">${description}</p>
+          <p id="mainDescription" class="mb-3 text-sm text-gray-400"></p>
         </div>
       </a>
       <!-- Four smaller cards -->

@@ -26,19 +26,20 @@ function getUserByEmail(email) {
 }
 
 // Function to update input values with user data
-function updateInputValues(userData) {
+function updateValues(userData) {
   if (userData) {
     username.innerHTML = `${userData.name} ${userData.surname}`;
     firstName.value = `${userData.name}`;
     lastName.value = `${userData.surname}`;
     emailInput.value = `${userData.email}`;
+    pfp.src = userData.pfp ? userData.pfp : "https://placehold.co/112";
   }
 }
 
 // Display user info from localStorage
 if (loggedInEmail) {
   const userData = getUserByEmail(loggedInEmail);
-  updateInputValues(userData);
+  updateValues(userData);
 
   // Change Info
   saveInfo.addEventListener("click", function (e) {
@@ -49,6 +50,7 @@ if (loggedInEmail) {
       surname: lastName.value,
       email: emailInput.value,
       password: userData.password,
+      pfp: userData.pfp,
       role: "user",
     };
 
@@ -58,7 +60,7 @@ if (loggedInEmail) {
       users[index] = newUserData;
       localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("loggedInUser", emailInput.value);
-      updateInputValues(newUserData);
+      updateValues(newUserData);
     }
   });
 }
@@ -69,28 +71,49 @@ inputPhoto.addEventListener("change", () => {
     const reader = new FileReader();
     reader.onload = function (e) {
       pfp.src = e.target.result;
+      const userData = getUserByEmail(loggedInEmail);
+      if (userData) {
+        userData.pfp = e.target.result;
+        const index = users.findIndex((user) => user.email === userData.email);
+        if (index !== -1) {
+          users[index] = userData;
+          localStorage.setItem("users", JSON.stringify(users));
+        }
+      }
     };
     reader.readAsDataURL(inputPhoto.files[0]);
   }
 });
 
 // Change Pass
+
+const currentPassError = document.getElementById("passError");
+const passDontMatch = document.getElementById("passDontMatch");
+const shortPass = document.getElementById("shortPass");
+const passSuccess = document.getElementById("pass-success");
+
 savePass.addEventListener("click", (e) => {
   e.preventDefault();
+
+  // HIDE ALL ERROR MESSAGES
+  currentPassError.classList.add("hidden");
+  passDontMatch.classList.add("hidden");
+  shortPass.classList.add("hidden");
+
+  //
   const userData = getUserByEmail(loggedInEmail);
   if (!userData || userData.password !== currentPass.value) {
-    alert("Incorrect current password");
+    currentPassError.classList.remove("hidden");
     return;
   } else if (newPass.value.length < 6) {
-    alert("Password should be at least 6 characters long");
+    shortPass.classList.remove("hidden");
     return;
   } else if (
     !newPass.value ||
     !confPass.value ||
     newPass.value !== confPass.value
   ) {
-    alert("Passwords not matching");
-    return;
+    passDontMatch.classList.remove("hidden");
   } else {
     userData.password = newPass.value;
     const index = users.findIndex((user) => user.email === userData.email);
@@ -98,7 +121,11 @@ savePass.addEventListener("click", (e) => {
       users[index] = userData;
       localStorage.setItem("users", JSON.stringify(users));
     }
-    alert("Password changed successfully");
+    // Display success message
+    passSuccess.classList.remove("hidden");
+    setTimeout(() => {
+      passSuccess.classList.add("hidden");
+    }, 2000);
 
     currentPass.value = "";
     newPass.value = "";

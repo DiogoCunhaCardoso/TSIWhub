@@ -2,7 +2,7 @@
 //
 //
 const avatarBtn = document.getElementById("avatarBtn");
-avatarBtn.addEventListener("click", toggleDropdown);
+avatarBtn && avatarBtn.addEventListener("click", toggleDropdown);
 
 // Function to toggle dropdown visibility
 function toggleDropdown() {
@@ -23,7 +23,8 @@ document.addEventListener("click", function (event) {
 //
 // Add click event listener to mobile menu toggle button
 const mobileMenuToggle = document.getElementById("mobileMenuToggle");
-mobileMenuToggle.addEventListener("click", toggleMobileMenu);
+mobileMenuToggle &&
+  mobileMenuToggle.addEventListener("click", toggleMobileMenu);
 
 // Function to toggle mobile menu visibility
 function toggleMobileMenu() {
@@ -63,7 +64,7 @@ if (loggedInEmail) {
     const avatarInitials = document.getElementById("avatarInitials");
     const avatarFullName = document.getElementById("avatarFullName");
     const avatarEmail = document.getElementById("avatarEmail");
-    avatarInitials.textContent = initials;
+    avatarInitials && (avatarInitials.textContent = initials);
     avatarFullName.textContent = formattedName;
     avatarEmail.textContent = loggedInEmail;
   }

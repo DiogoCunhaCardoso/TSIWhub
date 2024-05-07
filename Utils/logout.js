@@ -4,6 +4,9 @@ export function logout() {
 }
 
 // Make Button Do Function
-document.getElementById("logoutButton").addEventListener("click", function () {
-  logout();
-});
+document.getElementById("logoutButton") &&
+  document
+    .getElementById("logoutButton")
+    .addEventListener("click", function () {
+      logout();
+    });

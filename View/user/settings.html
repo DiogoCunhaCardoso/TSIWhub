@@ -19,7 +19,7 @@
         >
           <img
             id="pfp"
-            class="rounded-full w-28 aspect-square object-cover"
+            class="rounded-full w-28 aspect-square object-cover shadow-sm border"
             src="https://placehold.co/112"
             alt="profile picture"
           />
@@ -116,6 +116,9 @@
                     placeholder="Current Password"
                     required
                   />
+                  <div id="passError" class="text-red-500 text-xs hidden">
+                    Invalid password
+                  </div>
                 </div>
                 <div class="w-96">
                   <label
@@ -131,6 +134,12 @@
                     placeholder="Password"
                     required
                   />
+                  <div id="passDontMatch" class="text-red-500 text-xs hidden">
+                    Passwords don't match
+                  </div>
+                  <div id="shortPass" class="text-red-500 text-xs hidden">
+                    Password should be at least 6 characters long
+                  </div>
                 </div>
                 <div class="w-96">
                   <label
@@ -141,7 +150,7 @@
                   <input
                     type="password"
                     name="confPass"
-                    id="pass"
+                    id="confPass"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
                     placeholder="Password"
                     required
@@ -155,6 +164,22 @@
                 Save
               </button>
             </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSWORD CHANGED WITH SUCCESS -->
+      <div
+        id="pass-success"
+        class="fixed hidden z-50 bottom-20 left-0 flex items-center justify-center"
+      >
+        <div class="relative p-4 w-full max-w-md max-h-full">
+          <div class="relative bg-white rounded-lg shadow-lg border">
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-normal text-gray-500">
+                Password changed with success
+              </h3>
+            </div>
           </div>
         </div>
       </div>
