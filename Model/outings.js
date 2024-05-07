@@ -1,4 +1,4 @@
-export const studyPlans = [
+export const outings = [
   {
     name: "Conceção e desenvolvimento de software e produtos Web",
     description:

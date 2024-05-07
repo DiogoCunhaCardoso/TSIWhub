@@ -24,8 +24,15 @@ document
       document.getElementById("passwordMatchError").classList.remove("hidden");
       return;
     }
-    // Check if user already exists in localStorage
-    if (localStorage.getItem(email)) {
+
+    const usersLS = JSON.parse(localStorage.getItem("users")); // Parse the JSON string from local storage
+
+    // Function to check if email exists in the array of users
+    function emailExists(email, users) {
+      return users.some((user) => user.email === email);
+    }
+    // Check if the email exists in the array of users
+    if (emailExists(email, usersLS)) {
       document.getElementById("emailError").classList.remove("hidden");
       return;
     }
@@ -40,7 +47,7 @@ document
       surname: surname,
       email: email,
       password: password,
-      role: "admin", // default user
+      role: "user", // default user
     };
 
     users.push(newUser);

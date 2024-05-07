@@ -1,10 +1,10 @@
-import { studyPlans } from "../../Model/outings.js";
+import { outings } from "../../Model/outings.js";
 
 // Get the outingsDiv element
 const outingsDiv = document.getElementById("outingsDiv");
 
 // Loop through each item in the studyPlans array
-studyPlans.forEach((plan) => {
+outings.forEach((plan) => {
   // Create the HTML for the card
   const cardHTML = `
     <div class="m-4 max-w-sm rounded-lg overflow-hidden bg-gray-100">

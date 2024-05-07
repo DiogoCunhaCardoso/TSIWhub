@@ -4,7 +4,7 @@ function createTables() {
   const tableWrapper = document.getElementById("tableWrapper");
 
   Object.entries(questions).forEach(([subjectName, subject]) => {
-    const subjectParagraph = `<p class="font-medium text-lg mt-4">${subjectName}</p>`;
+    const subjectParagraph = `<p class="font-medium text-lg mt-4 bg-violet-500 py-2 px-4 text-white rounded-lg shadow-md">${subjectName}</p>`;
     tableWrapper.insertAdjacentHTML("beforeend", subjectParagraph);
 
     // Create a table element for each subject

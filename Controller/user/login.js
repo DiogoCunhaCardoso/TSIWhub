@@ -1,5 +1,6 @@
 import { alumni } from "../../Model/alumni.js";
 import { studyPlans } from "../../Model/study-plans.js";
+import { images } from "../../Model/images.js";
 
 document
   .getElementById("loginForm")
@@ -35,4 +36,6 @@ function startLS() {
     localStorage.setItem("alumnus", JSON.stringify(alumni));
   !localStorage.getItem("studyPlans") &&
     localStorage.setItem("studyPlans", JSON.stringify(studyPlans));
+  !localStorage.getItem("images") &&
+    localStorage.setItem("images", JSON.stringify(images));
 }

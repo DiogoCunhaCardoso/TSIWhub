@@ -11,13 +11,29 @@
     <!-- NAVIGATION -->
     <div id="navbar"></div>
     <!-- BODY -->
-    <h1 class="m-4 lg:m-6">
-      <!-- BANNER -->
+
+    <!-- BANNER -->
+    <main class="my-24 mx-5 flex flex-col m-8 mb-32 lg:mb-24">
       <div>
-        <img src="https://placehold.co/320" alt="banner" />
+        <img
+          id="bannerImage"
+          width="300"
+          alt="banner"
+          class="object-cover shadow-md"
+        />
       </div>
-    </h1>
-    <!-- FOOTER -->
+
+      <!-- FALTA EVENTOS AQUI -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+
+      <!-- GALLERY -->
+      <p class="mt-8 mb-4 font-semibold text-lg">Gallery</p>
+      <div id="wholeGallery" class="flex items-center gap-4 overflow-x-scroll">
+        <!-- Gallery dinamically here -->
+      </div>
+    </main>
 
     <!-- FAB -->
     <div id="FABDiv"></div>
@@ -37,5 +53,6 @@
     <!--  -->
     <script src="/Controller/user/navbar.js"></script>
     <script type="module" src="/Utils/logout.js"></script>
+    <script type="module" src="/Controller/user/presentation.js"></script>
   </body>
 </html>
