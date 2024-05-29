@@ -1,6 +1,9 @@
 export function logout() {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "/View/login.html";
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  if (loggedInUser) {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "/View/login.html";
+  }
 }
 
 // Make Button Do Function

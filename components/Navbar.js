@@ -1,12 +1,12 @@
 function createNavbar(selectedItem) {
   const menuItems = [
-    { text: "Presentation", href: "/View/index.html" },
-    { text: "Study Plans", href: "/View/user/study-plans.html" },
-    { text: "Outings", href: "/View/user/outings.html" },
-    { text: "+Info", href: "/View/user/more-info.html" },
+    { text: "Apresentação", href: "/View/index.html" },
+    { text: "Plano de Estudos", href: "/View/user/study-plans.html" },
+    { text: "Saídas", href: "/View/user/outings.html" },
+    { text: "+ Info", href: "/View/user/more-info.html" },
     { text: "Alumni", href: "/View/user/alumni.html" },
-    { text: "Projects", href: "/View/user/projects.html" },
-    { text: "Settings", href: "/View/user/settings.html" },
+    { text: "Projetos", href: "/View/user/projects.html" },
+    { text: "Definições", href: "/View/user/settings.html" },
     { text: "Sign Out", href: "/View/login.html" },
   ];
 
@@ -24,7 +24,7 @@ function createNavbar(selectedItem) {
   //
 
   let navbarHTML = `
-    <nav class="flex justify-between items-center bg-violet-600 py-4 px-6 fixed top-0 w-dvw">
+    <nav class="flex justify-between items-center bg-gray-800 py-4 px-6 fixed top-0 w-dvw">
       <a href="/View/index.html" class="text-white">
         <img src="/images/logo.svg" alt="logo" width="64" />
       </a>
@@ -40,12 +40,14 @@ function createNavbar(selectedItem) {
         <div id="mobileDropdown" class="hidden bg-gray-800 absolute top-[53.6px] left-0 right-0 z-10 py-2">
           ${menuItems
             .map(
-              (menuItem) =>
-                `<a href="${menuItem.href}" class="block ${
-                  selectedItem === menuItem.text
-                    ? "text-white px-4 py-2 bg-violet-900"
-                    : "text-white px-4 py-2 hover:bg-violet-500"
-                }">${menuItem.text}</a>`
+              (menuItem) => `
+                <a href="${menuItem.href}" class="block ${
+                selectedItem === menuItem.text
+                  ? "text-white px-4 py-2 bg-violet-900"
+                  : "text-white px-4 py-2 hover:bg-violet-500"
+              }" ${menuItem.text === "Sign Out" ? 'id="logoutButton"' : ""}>
+                  ${menuItem.text}
+                </a>`
             )
             .join("")}
         </div>
@@ -76,20 +78,30 @@ function createNavbar(selectedItem) {
             <div id="avatarDropdown" class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute top-12 right-0 mt-2 dark:bg-gray-700 dark:divide-gray-600">
               <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                 <div class="font-medium truncate" id="avatarFullName">${
-                  userData ? userData.name : "sign out"
-                } ${userData ? userData.surname : "& login again"}</div>
+                  userData ? userData.name : "Sem conta logada"
+                } ${userData ? userData.surname : ""}</div>
                 <div id="avatarEmail">${
-                  loggedInEmail ? loggedInEmail : "no email"
+                  loggedInEmail ? loggedInEmail : ""
                 }</div>
               </div>
-              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
-                <li>
-                  <a href="/View/user/settings.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                </li>
-              </ul>
+              ${
+                loggedInEmail
+                  ? `<ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                       <li>
+                         <a href="/View/user/settings.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Definições</a>
+                       </li>
+                     </ul>`
+                  : ""
+              }
+              
               <div class="py-1">
-                <a id="logoutButton" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white select-none">Sign out</a>
-              </div>
+  ${
+    loggedInEmail
+      ? `<a href="/View/login.html" id="logoutButton" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white select-none" onclick="localStorage.removeItem('loggedInUser')">Sign Out</a>`
+      : `<a href="/View/login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white select-none">Log In</a>`
+  }
+</div>
+
             </div>
 
         </div>
