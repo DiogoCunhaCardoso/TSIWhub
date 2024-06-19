@@ -4,84 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSIW hub</title>
-    <link rel="stylesheet" href="./user/userCSS/presentation.css">
+    <link rel="stylesheet" href="./user/userCSS/presentation.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
   </head>
   <body>
     <!-- NAVIGATION -->
     <div id="navbar"></div>
     <!-- BODY -->
 
-    <!-- BANNER -->
-    <main class="my-24 mx-5 flex flex-col m-8 mb-32 lg:mb-24">
-      <div>
-      
-      </div>
-
-      <!-- FALTA EVENTOS AQUI -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-
+    <main class="max-w-7xl mx-auto my-24 mx-5 flex flex-col m-8 mb-32 lg:mb-24">
       <!-- BANNER -->
-      <div class="slide-container">
-        <div class="gallery-text">Bem-vindo ao TSIWHub</div>
-        <div class="slides">
-            <img src="https://www.esmad.ipp.pt/slider-destaques/esmad-02/imageHighlight" alt="" class="active">
-            <img src="https://www.esmad.ipp.pt/slider-destaques/esmad-03/imageHighlight" alt="">
-            <img src="https://www.esmad.ipp.pt/slider-destaques/esmad-04/imageHighlight" alt="">
-            <img src="https://www.esmad.ipp.pt/slider-destaques/esmad-05/imageHighlight" alt="">
-        </div>
-
-        <div class="buttons">
-            <span class="next">&#10095;</span>
-            <span class="prev">&#10094;</span>
-        </div>
+      <div
+        id="bannerSlider"
+        class="relative w-full h-96 rounded-md overflow-hidden bg-cover bg-center"
+      >
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <h1
+          class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold select-none"
+        >
+          Bem-vindo a TSIW
+        </h1>
       </div>
+      <!-- CIRCLE CONTAINER -->
+      <div class="flex justify-center mt-4" id="circleContainer"></div>
 
-      <!--EVENTOS-->
-      <h1 id="eventosText">Eventos</h1>
-      <div class="card-container">
-          <div class="card" data-href="../View/user/events1.html">
-            <h1 id="event1Title"></h1>
-            <div id="event1Image"><img></div>
-          </div>
-          <div class="card" data-href="../View/user/events2.html">
-            <h1 id="event2Title"></h1>
-            <div id="event2Image"><img></div>
-          </div>
-          <div class="card" data-href="../View/user/events3.html">
-            <h1 id="event3Title"></h1>
-            <div id="event3Image"><img src="" alt=""></div>
-          </div>
-          <div class="card" data-href="../View/user/events4.html">
-            <h1 id="event4Title"></h1>
-            <div id="event4Image"><img src="" alt=""></div>
-          </div>
-
-      </div>
+      <!--EVENTS-->
+      <h1 class="text-xl font-bold mt-16 ml-5">Eventos</h1>
+      <div
+        id="allEvents"
+        class="w-full grid gap-4 mt-6 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1"
+      ></div>
 
       <!--GALLERY-->
-      <h1 id="imagensText">Imagens</h1>
-      </div>
-      <div class="relative w-full px-4 sm:px-10">
-        <button class="hidden sm:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full" onclick="scrollGallery('left')">&lt;</button>
-        <div class="gallery2-container flex">
-            <img src="/images/presentation/gallery/1.jpeg" alt="Image 1" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/10.jpeg" alt="Image 2" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/2.jpeg" alt="Image 3" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/3.jpeg" alt="Image 4" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/4.jpeg" alt="Image 4" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/5.jpeg" alt="Image 4" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/6.jpeg" alt="Image 4" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/7.jpeg" alt="Image 4" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/8.jpeg" alt="Image 4" class="gallery2-item rounded-lg shadow-lg">
-            <img src="/images/presentation/gallery/9.jpeg" alt="Image 4" class="gallery2-item rounded-lg shadow-lg">
-        </div>
-        <button class="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full" onclick="scrollGallery('right')">&gt;</button>
-      </div>
-
+      <h1 class="text-xl font-bold mt-16 ml-5">Galeria</h1>
+      <div
+        id="allGallery"
+        class="w-full flex overflow-x-scroll space-x-4 p-4"
+      ></div>
     </main>
 
     <!-- FAB -->
@@ -103,9 +63,17 @@
     <script src="/Controller/user/navbar.js"></script>
     <script type="module" src="/Utils/logout.js"></script>
     <!-- presentation.js -->
-    <script type="module" src="/Controller/user/presentation/presentation.js"></script>
-    <script src="../Controller/user/presentation/gallery.js"></script>
-    <script src="../Controller/user/presentation/events.js"></script>
+    <script
+      type="module"
+      src="/Controller/user/presentation/banner.js"
+    ></script>
+    <script
+      type="module"
+      src="../Controller/user/presentation/gallery.js"
+    ></script>
+    <script
+      type="module"
+      src="../Controller/user/presentation/events.js"
+    ></script>
   </body>
-    
 </html>

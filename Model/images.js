@@ -1,5 +1,10 @@
 export const images = {
-  banner: "../images/presentation/banner.jpg",
+  banner: [
+    "https://www.esmad.ipp.pt/slider-destaques/esmad-02/imageHighlight",
+    "https://www.esmad.ipp.pt/slider-destaques/esmad-03/imageHighlight",
+    "https://www.esmad.ipp.pt/slider-destaques/esmad-04/imageHighlight",
+    "https://www.esmad.ipp.pt/slider-destaques/esmad-05/imageHighlight",
+  ],
   gallery: [
     "../images/presentation/gallery/1.jpeg",
     "../images/presentation/gallery/2.jpeg",
