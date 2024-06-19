@@ -28,9 +28,15 @@ function generateStudyPlanTables() {
           .map(
             (subject) => `
           <tr>
-            <td class="border-b border-slate-400 px-4 bg-gray-100 py-2">${subject.subjectName}</td>
-            <td class="border-b border-slate-400 px-4 bg-gray-100 py-2">${subject.semester}</td>
-            <td class="border-b border-slate-400 px-4 bg-gray-100 py-2">${subject.ectsCount}</td>
+            <td class="border-b border-slate-400 px-4 bg-gray-100 py-2 cursor-help hover:font-semibold subject-name" data-info="${
+              subject.info || "Sem Informação Disponível"
+            }">${subject.subjectName}</td>
+            <td class="border-b border-slate-400 px-4 bg-gray-100 py-2">${
+              subject.semester
+            }</td>
+            <td class="border-b border-slate-400 px-4 bg-gray-100 py-2">${
+              subject.ectsCount
+            }</td>
           </tr>
         `
           )
@@ -47,5 +53,21 @@ function generateStudyPlanTables() {
   });
 }
 
+function addSubjectNameListeners() {
+  const subjectNames = document.querySelectorAll(".subject-name");
+  subjectNames.forEach((subjectName) => {
+    subjectName.addEventListener("click", () => {
+      Swal.fire({
+        icon: "info",
+        title: `${subjectName.textContent}`,
+        text: `${subjectName.dataset.info}`,  
+      });
+    });
+  });
+}
+
 // Call the function to generate the tables when the page loads
-window.addEventListener("load", generateStudyPlanTables);
+window.addEventListener("load", () => {
+  generateStudyPlanTables();
+  addSubjectNameListeners();
+});

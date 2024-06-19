@@ -1,0 +1,32 @@
+#notification {
+  position: fixed;
+  bottom: 15%;
+  left: 2%;
+  padding: 10px;
+  animation: slide-up 2s ease-out, fade-out 2s 8s forwards;
+  z-index: 1000;
+  background-color: #803cec;
+  border-radius: 15px;
+  color: white;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+

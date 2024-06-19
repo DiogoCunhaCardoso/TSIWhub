@@ -24,7 +24,7 @@ function createNavbar(selectedItem) {
   //
 
   let navbarHTML = `
-    <nav class="flex justify-between items-center bg-gray-800 py-4 px-6 fixed top-0 w-dvw">
+    <nav class="z-[1000] flex justify-between items-center bg-gray-800 py-4 px-6 fixed top-0 w-dvw">
       <a href="/View/index.html" class="text-white">
         <img src="/images/logo.svg" alt="logo" width="64" />
       </a>

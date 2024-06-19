@@ -1,0 +1,166 @@
+#back-arrow {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 120vh;
+    flex-direction: column;
+}
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; 
+    margin: auto; 
+    padding: 0;
+    flex-direction: row;
+}
+
+.imageContainer img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+  
+.textContainer {
+    flex-grow: 1;
+    height: 250px;
+    width: 50%; 
+    margin-left: 25px; 
+    max-width: 35%;
+}
+
+.textContainer h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.textContainer h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.textContainer p {
+    font-size: 1rem;
+    margin-top: -1rem;
+}
+
+.lowerTextContainer {
+    display: flex;
+    justify-content: flex-start; 
+    align-self: center; 
+    margin: auto; 
+    padding: 0;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 27vw;
+    margin-top: -5rem;
+}
+
+.lowerTextContainer h1 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: -200vh;
+}
+
+.card-container > div {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-container > div:hover {
+    transform: scale(1.15);
+}
+
+.card {
+    flex: 0 0 200px;
+    margin: -50px 30px 100px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f0f0f0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.card h1{
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.video-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #back-arrow {
+        position: fixed;
+        top: 70px;
+        left: 10px;
+        font-size: 2em;
+        text-decoration: none;
+        color: black;
+        background-color: white;
+    }
+
+    .imageContainer img {
+        width: 100%; 
+        max-width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+    }
+
+
+    body, html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    .card, .container {
+        box-sizing: border-box; 
+        max-width: 100%; 
+    }
+
+    .section{
+        margin-bottom: 200px;
+    }
+
+    .video-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 80px;
+        width: 50%;
+    }
+}

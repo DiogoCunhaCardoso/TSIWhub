@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSIW hub</title>
 
+    <style>
+      #outingsDiv > div {
+        transition: transform 0.3s ease;
+      }
+
+      #outingsDiv > div:hover {
+        transform: scale(1.15);
+      }
+    </style>
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -12,12 +22,15 @@
     <div id="navbar"></div>
     <!-- BODY -->
 
-    <div class="flex justify-center items-center min-h-[calc(100vh-62px)]">
-      <div
-        id="outingsDiv"
-        class="grid grid-cols-1 md:grid-cols-3 max-w-4xl"
-      ></div>
-    </div>
+    <main class="my-20 md:my-0">
+      <div class="flex justify-center items-center min-h-[calc(100vh-62px)]">
+        <div
+          id="outingsDiv"
+          class="grid grid-cols-1 md:grid-cols-3 max-w-5xl"
+        ></div>
+      </div>
+    </main>
+
     <!-- FAB -->
     <div id="FABDiv"></div>
     <!-- FOOTER -->

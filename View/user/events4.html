@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSIW hub</title>
+    <link rel="stylesheet" href="./userCSS/events.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <a href="../index.html" id="back-arrow">←</a>
+    <!-- NAVIGATION -->
+    <div id="navbar"></div>
+    <!-- BODY -->
+    <div class="info">
+      <div class="section">
+        <div class="imageContainer">
+          <div id="event4Image"><img class="object-cover"></div>
+        </div>
+        <div class="textContainer">
+          <h3></h3>
+          <h1 id="event4Title"></h1>
+          <p id="event4Subtitle"></p>
+        </div>
+      </div>
+
+      <div class="lowerTextContainer">
+        <p id="event4TextBox1"></p> <br>
+        <p id="event4TextBox2"></p>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card" data-href="./events2.html">
+        <h1 id="event2Title"></h1>
+        <div id="event2Image"><img alt=""></div>
+      </div>
+      <div class="card" data-href="./events3.html">
+        <h1 id="event3Title"></h1>
+        <div id="event3Image"><img alt=""></div>
+      </div>
+      <div class="card" data-href="./events1.html">
+        <h1 id="event1Title"></h1>
+        <div id="event1Image"><img alt=""></div>
+      </div>
+    </div>
+
+  </div>
+    <!-- FAB -->
+    <div id="FABDiv"></div>
+    <!-- FOOTER -->
+    <div id="FooterDiv"></div>
+
+    <script src="/components/FAB.js"></script>
+    <script src="/components/Footer.js"></script>
+    <script src="/components/Navbar.js"></script>
+
+    <!-- SELECTED INDEX -->
+    <script>
+      const selectedItem = "Projects";
+      const navbarHTML = createNavbar(selectedItem);
+      document.getElementById("navbar").innerHTML = navbarHTML;
+    </script>
+    <!--  -->
+    <script src="/Controller/user/navbar.js"></script>
+    <script type="module" src="/Utils/logout.js"></script>
+
+
+
+
+    <script>
+      function toggleSubjectBox(id) {
+        const subjectBox = document.getElementById(id);
+        subjectBox.classList.toggle('hidden');
+      }
+    </script>
+
+
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var cards = document.querySelectorAll('.card');
+
+      cards.forEach(function(card) {
+          card.addEventListener('click', function() {
+              window.location.href = this.getAttribute('data-href');
+          });
+      });
+    });
+  </script>
+  <script src="../../Controller/user/presentation/events.js"></script>
+</html>
