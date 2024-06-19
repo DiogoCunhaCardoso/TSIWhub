@@ -6,6 +6,7 @@ function startTimer() {
 
 function updateTimer() {
   if (time.totalSeconds <= 0) {
+    window.location.href = "./failure.html";
     clearInterval(time.timerInterval);
     return;
   }

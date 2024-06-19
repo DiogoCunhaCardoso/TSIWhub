@@ -9,6 +9,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  display: none;
 }
 
 #popup > div {
@@ -62,10 +63,9 @@
   cursor: pointer;
 }
 
-#popup button:hover {
-  background-color: darkblue;
+#answer {
+  display: none;
 }
-
 body {
   margin: 0;
   box-sizing: border-box;
@@ -76,24 +76,6 @@ body {
 
 .timer_stuff {
   position: fixed;
-}
-
-#startTimer {
-  top: 40px;
-  right: 10px;
-  z-index: 100;
-}
-
-#stopTimer {
-  top: 60px;
-  right: 10px;
-  z-index: 100;
-}
-
-#resetTimer {
-  top: 80px;
-  right: 10px;
-  z-index: 100;
 }
 
 #timer {
@@ -115,6 +97,28 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+}
+#wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.correct-pop-up {
+  position: fixed;
+  color: #ffffff;
+  z-index: 100;
+  top: 80px;
+  right: 24px;
+  display: none;
+  justify-items: center;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 8px;
+  background: #0e860a;
 }
 
 #toplevel {
@@ -139,24 +143,15 @@ area {
 map,
 #fundo,
 #layer_areas,
-.lock_UI,
-.books_UI,
-.TV_UI,
-.post-it_UI,
-.monitor_UI,
-.matrix_UI,
-.symbolLock_UI,
-.safe_UI,
-.cipher_UI,
-.door_UI {
+.variants {
   position: absolute;
+  height: 100vh;
 }
 
 /*  */
 
-.variants {
-  position: absolute;
-  z-index: -1;
+#layer_areas {
+  z-index: 1;
 }
 
 #bubble {
@@ -164,16 +159,7 @@ map,
   visibility: hidden;
   width: 32px;
   height: 32px;
-}
-
-#filter {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0px;
-  background: #000000;
-  opacity: 50%;
-  z-index: -1;
+  z-index: 2;
 }
 
 /* SLOTS */
@@ -182,134 +168,147 @@ map,
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   bottom: 24px;
   right: 24px;
   gap: 10px;
+  z-index: 2;
 }
 
 .allSlots > div {
   border-radius: 8px;
   background: #fff;
+  background-repeat: no-repeat;
   border: solid 3px black;
-  height: 96px;
-  width: 96px;
-  display: flex;
+  height: 90px;
+  width: 90px;
   justify-content: center;
   align-items: center;
 }
 
-/*  */
-
-#layer_lock {
+#manualIcon {
   position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+  bottom: 24px;
+  z-index: 200;
+  left: 24px;
+  border-radius: 8px;
+  background: #fff;
+  background-repeat: no-repeat;
+  border: solid 3px black;
+  height: 90px;
+  width: 90px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../images/assets/Manual.png");
+  cursor: pointer;
 }
 
-#layer_books {
+#manual {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
   position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
   left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
 }
 
-#layer_TV {
+#cifraBooks {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
   position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
   left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
 }
 
-#layer_post-it {
-  position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+#pageOneCifra {
+  margin: 60px 10px 10px 20%;
+  background-color: #fff;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
-#layer_monitor {
-  position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+#pageTwoCifra {
+  margin: 60px 20% 10px 10px;
+  background-color: #fff;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
-#layer_matrix {
-  position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+#pageOne {
+  margin: 48px 10px 10px 10px;
+  width: 50%;
+  font-weight: bold;
+  background: linear-gradient(to left, white 80%, gray 100%);
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  cursor: pointer;
 }
 
-#layer_symbolLock {
-  position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+#pageTwo {
+  margin: 48px 10px 10px 10px;
+  width: 50%;
+  font-weight: bold;
+  background: linear-gradient(to right, white 80%, gray 100%);
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  cursor: pointer;
 }
 
-#layer_safe {
+#cifraBooksClose {
   position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+  top: 10px;
+  right: 20%;
+  background: blue;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-#layer_cipher {
+#pageOneNum {
   position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
-}
-#cipher {
-  z-index: -1;
+  top: 10px;
+  left: 45%;
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
 }
 
-#layer_door {
+#pageTwoNum {
   position: absolute;
-  width: 40vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background: #f0f0f0;
-  z-index: -2;
-  border-radius: 10px;
+  top: 10px;
+  right: 45%;
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+#manualClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: blue;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }

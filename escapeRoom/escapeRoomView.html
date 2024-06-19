@@ -13,79 +13,104 @@
         position: fixed;
         top: 16px;
         left: 16px;
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
         background: #f00;
         z-index: 100;
+        color: #fff;
+        text-decoration: none;
+        align-content: center;
+        text-align: center;
+        font-size: larger;
+        font-weight: bolder;
+        border-radius: 50%;
       "
-    >
+    >&#60
     </a>
     <div id="popup">
       <div>
-        <p id="close">close</p>
+        <p id="close">Fechar</p>
         <h1 id="question"></h1>
+        <img id="imagem">
         <div id="options"></div>
 
         <p id="answer"></p>
       </div>
     </div>
-    <div id="container">
-      <div id="escape_room">
-        <img src="../images/assets/fundo.png" alt="escape room" id="fundo" />
-        <!--           style="height: 100vh; opacity: 50%" -->
-        <!-- MUDAR AQUI -->
-        <img
-          src="../images/assets/Variants/Armario_Aberto.png"
-          id="armario_aberto"
-          class="variants"
-        />
-        <img
-          src="../images/assets/Variants/Caixa_Aberta.png"
-          id="caixa_aberta"
-          class="variants"
-        />
-        <img
-          src="../images/assets/Variants/Cifra_Parede.png"
-          id="cifra_parede"
-          class="variants"
-        />
-        <img
-          src="../images/assets/Variants/Televisao_Olho.png"
-          id="televisao_olho"
-          class="variants"
-        />
-        <img
-          src="../images/assets/area layer.png"
-          id="layer_areas"
-          usemap="#escape room"
-        />
-      </div>
-      <!--  -->
-      <!-- MAP -->
-      <map name="escape room" id="mapa"> </map>
-      <!-- Areas added on mapping.js -->
-      <img
-        src="../images/assets/infoBubble.png"
-        alt="info bubble"
-        id="bubble"
-      />
-      <div class="allSlots">
-        <div>item 1</div>
-        <div>item 2</div>
-        <div>item 3</div>
-      </div>
+    <div id="wrapper">
+      <div id="container">
+        <div id="escape_room">
+          
+          <!--           style="height: 100vh; opacity: 50%" -->
+          <!-- MUDAR AQUI -->
+          <img
+            src="../images/assets/Variants/Armario_Aberto.png"
+            id="armario_aberto"
+            class="variants"
+          />
+          <img
+            src="../images/assets/Variants/Caixa_Aberta.png"
+            id="caixa_aberta"
+            class="variants"
+          />
+          <img
+            src="../images/assets/Variants/Cifra_Parede.png"
+            id="cifra_parede"
+            class="variants"
+          />
+          <img
+            src="../images/assets/Variants/Televisao_Olho.png"
+            id="televisao_olho"
+            class="variants"
+          />
+          <img src="../images/assets/fundo.png" alt="escape room" id="fundo" />
+          <img
+            src="../images/assets/area_layer.png"
+            id="layer_areas"
+            usemap="#escape room"
+          />
+        </div>
+        <!-- MAP -->
+        <map name="escape room" id="mapa"> </map>
+        <!-- Areas added on mapping.js -->
+        <img src="../images/assets/infoBubble.png" alt="info bubble" id="bubble"/>
+        
 
-      <div id="timer" class="timer_stuff">00:15:00</div>
+        <div id="timer" class="timer_stuff">00:15:00</div>
+      </div>
+    </div>
+    
+    <div class="allSlots">
+      <div id="item_1"></div>
+      <div id="item_2"></div>
+      <div id="item_3"></div>
+      <div id="item_4"></div>
+    </div>
+
+    <div id="pass-success" class="correct-pop-up">
+      <h3 class="text-lg font-normal text-gray-500">Correto</h3>
+    </div>
+
+    <div id="cifraBooks">
+      <p id="cifraBooksClose">Fechar</p>
+      <img id="pageOneCifra"><img/>
+      <img id="pageTwoCifra"><img/>
+      <p id="pageOneNum">0</p>
+      <p id="pageTwoNum">1</p>
+    </div>
+
+    <div id="manual">
+      <p id="manualClose">Fechar</p>
+      <div id="pageOne"><pre id="pageOneText"></pre></div>
+      <div id="pageTwo"><pre id="pageTwoText"></pre></div>
+    </div>
+    
+    <div id="manualIcon">
     </div>
 
     <script defer type="module" src="/escapeRoom/Controller/model.js"></script>
-    <script
-      defer
-      type="module"
-      src="/escapeRoom/Controller/mapping.js"
-    ></script>
+    <script defer type="module" src="/escapeRoom/Controller/mapping.js"></script>
     <script defer type="module" src="/escapeRoom/Controller/game.js"></script>
     <script defer type="module" src="/escapeRoom/Controller/timer.js"></script>
-    <script defer type="module" src="/escapeRoom/Controller/"></script>
   </body>
 </html>
