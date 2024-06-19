@@ -5,7 +5,7 @@ const moreInfoDiv = document.getElementById("moreInfoDiv");
 moreInfo.forEach((plan, i) => {
   // Create the HTML for the card
   const cardHTML = `
-    <div class="m-4 max-w-sm rounded-lg overflow-hidden bg-gray-100 ${
+    <div class="m-4 max-w-sm rounded-lg overflow-hidden bg-gray-100 hover:scale-[1.01] transition ${
       i == 2 ? "cursor-pointer" : "cursor-auto"
     }" ${
     i === 2

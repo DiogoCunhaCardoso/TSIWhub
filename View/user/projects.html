@@ -4,97 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSIW hub</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <!-- NAVIGATION -->
     <div id="navbar"></div>
-    <!-- FAB -->
-    <h1 class="m-4 lg:m-6">PROJECTS</h1>
-    <div id="FABDiv"></div>
 
     <!-- CONTENT -->
-    <main class="m-4 lg:m-12 flex justify-center my-20">
-      <div class="w-full relative max-w-2xl" data-carousel="slide">
-        <!-- Carousel wrapper -->
-        <div class="relative h-96 overflow-hidden rounded-lg mx-4">
-          <!-- PROJECT 1 -->
-          <div data-carousel-item class="text-center">
-            <img
-              src="https://placehold.co/600x400"
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            />
-            <div
-              class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 px-4 py-2"
-            >
-              <p class="text-black font-semibold">Projeto 1</p>
-              <p class="text-gray-600">
-                Lorem ipsum dolor sit amet adipiscing elit.
-              </p>
-            </div>
-          </div>
-          <!-- PROJECT 2 -->
-          <div data-carousel-item class="text-center">
-            <img
-              src="https://placehold.co/600x410"
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            />
-            <div
-              class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 px-4 py-2"
-            >
-              <p class="text-black font-semibold">Projeto 2</p>
-              <p class="text-gray-600">
-                Lorem dolor sit amet consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-          <!-- PROJECT 3 -->
-          <div data-carousel-item class="text-center">
-            <img
-              src="https://placehold.co/600x420"
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            />
-            <div
-              class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 px-4 py-2"
-            >
-              <p class="text-black font-semibold">Projeto 3</p>
-              <p class="text-gray-600">
-                Lipsum dolor amet consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Slider controls -->
+    <main class="flex-1 flex items-center justify-center flex-col">
+      <!-- PROJECTS -->
+      <div id="allProjects" class="flex gap-5 mb-4"></div>
+
+      <!-- Navigation Buttons -->
+      <div class="flex flex-row justify-center items-center">
         <button
-          class="absolute top-1/2 left-0 transform -translate-y-1/2"
-          data-carousel-prev
+          id="prevButton"
+          class="bg-purple-400 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded mr-4"
         >
-          <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 shadow-lg"
-          >
-            <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 6 10">
-              <path stroke="currentColor" stroke-width="2" d="M5 1 1 5l4 4" />
-            </svg>
-          </span>
+          Anterior
         </button>
         <button
-          class="absolute top-1/2 right-0 transform -translate-y-1/2"
-          data-carousel-next
+          id="nextButton"
+          class="bg-purple-400 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded"
         >
-          <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 shadow-lg"
-          >
-            <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 6 10">
-              <path stroke="currentColor" stroke-width="2" d="m1 9 4-4-4-4" />
-            </svg>
-          </span>
+          Próximo
         </button>
       </div>
     </main>
 
+    <!-- FAB -->
+    <div id="FABDiv"></div>
+
     <!-- FOOTER -->
-    <div id="FooterDiv"></div>
+    <footer id="FooterDiv"></footer>
 
     <script src="/components/FAB.js"></script>
     <script src="/components/Footer.js"></script>
@@ -107,7 +49,7 @@
     </script>
     <!--  -->
     <script src="/Controller/user/navbar.js"></script>
-    <script src="/Controller/user/projects.js"></script>
+    <script type="module" src="/Controller/user/projects.js"></script>
     <script type="module" src="/Utils/logout.js"></script>
   </body>
 </html>

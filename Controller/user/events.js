@@ -1,21 +1,9 @@
 import { events as eventsModel } from "../../Model/events.js";
+import { getUrlParams } from "../../Utils/getUrlParams.js";
 
 const eventsLS = JSON.parse(
   localStorage.getItem("events") || JSON.stringify(eventsModel)
 );
-
-// Get URL query parameters
-function getUrlParams() {
-  const params = {};
-  window.location.search
-    .substring(1)
-    .split("&")
-    .forEach((param) => {
-      const [key, value] = param.split("=");
-      params[key] = decodeURIComponent(value);
-    });
-  return params;
-}
 
 // Function to find event by ID
 function findEventById(id) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="max-w-5xl mx-auto mt-8 p-8">
+      <div id="projectDetails">
+        <div class="flex gap-5">
+          <img
+            alt="Project Image"
+            id="projectImage"
+            class="w-60 aspect-square rounded-lg shadow-m object-cover"
+          />
+          <span>
+            <h1 class="text-xs" id="projectDate"></h1>
+            <h1 class="text-xl font-bold mb-4" id="projectTitle"></h1>
+            <p class="max-w-[400px]" id="projectSubtitle"></p>
+            <p class="text-sm" id="projectOwner"></p>
+          </span>
+        </div>
+        <div class="mb-4"></div>
+        <p class="text-base" id="projectDescription"></p>
+        <div class="my-4">
+          <iframe
+            id="projectVideo"
+            width="560"
+            height="315"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Back Arrow Icon -->
+      <div class="absolute top-16 left-16 hover:scale-105">
+        <a
+          href="/View/user/projects.html"
+          id="backButton"
+          class="flex justify-center w-8 h-8 bg-[#eee] rounded-full text-black text-xl block mt-4"
+          >&larr;</a
+        >
+      </div>
+    </main>
+
+    <script
+      type="module"
+      src="../../Controller/user/projectShowcase.js"
+    ></script>
+  </body>
+</html>
