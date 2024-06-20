@@ -64,8 +64,9 @@
 }
 
 #answer {
-  display: block;
+  display: none;
 }
+
 body {
   margin: 0;
   box-sizing: border-box;

@@ -9,35 +9,40 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <main class="flex justify-center items-center h-screen p-5 bg-violet-100">
+    <main class="flex justify-center items-center h-screen p-5 bg-violet-200">
+      <img
+        src="/images/logo.svg"
+        alt="Centered Image"
+        class="absolute top-10 transform -translate-x-1/2 left-1/2 w-24 h-24"
+      />
       <div
         class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8"
       >
         <form class="space-y-4" id="loginForm">
-          <h5 class="text-xl font-medium text-gray-900">Log in</h5>
+          <h5 class="text-xl font-medium text-gray-900">Bem-vindo!</h5>
           <div>
             <label
               for="email"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Your email</label
+              >O teu email</label
             >
             <input
               type="email"
               name="email"
               id="email"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="name@email.com"
+              placeholder="nome@email.com"
               required
             />
             <div id="emailError" class="text-red-500 text-xs hidden">
-              Invalid email or password
+              Email ou palavra passe inválida
             </div>
           </div>
           <div>
             <label
               for="password"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Your password</label
+              >A tua palarva-passe</label
             >
             <input
               type="password"
@@ -48,21 +53,21 @@
               required
             />
             <div id="passwordError" class="text-red-500 text-xs hidden">
-              Invalid email or password
+              Email ou palavra-passe inválida
             </div>
           </div>
           <button
             type="submit"
             class="w-full text-white bg-violet-600 hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-violet-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
-            Login to your account
+            Entrar
           </button>
           <div class="text-sm font-medium text-gray-500">
-            Not registered?
+            Sem registo?
             <a
               href="/View/register.html"
               class="text-violet-600 hover:underline"
-              >Create account</a
+              >Cria uma conta</a
             >
           </div>
         </form>

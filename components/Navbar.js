@@ -7,7 +7,7 @@ function createNavbar(selectedItem) {
     { text: "Alumni", href: "/View/user/alumni.html" },
     { text: "Projetos", href: "/View/user/projects.html" },
     { text: "Definições", href: "/View/user/settings.html" },
-    { text: "Sign Out", href: "/View/login.html" },
+    { text: "Terminar sessão", href: "/View/login.html" },
   ];
 
   const users = JSON.parse(localStorage.getItem("users") || "[]");
@@ -45,7 +45,9 @@ function createNavbar(selectedItem) {
                 selectedItem === menuItem.text
                   ? "text-white px-4 py-2 bg-violet-900"
                   : "text-white px-4 py-2 hover:bg-violet-500"
-              }" ${menuItem.text === "Sign Out" ? 'id="logoutButton"' : ""}>
+              }" ${
+                menuItem.text === "Terminar sessão" ? 'id="logoutButton"' : ""
+              }>
                   ${menuItem.text}
                 </a>`
             )
@@ -78,7 +80,7 @@ function createNavbar(selectedItem) {
             <div id="avatarDropdown" class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute top-12 right-0 mt-2 dark:bg-gray-700 dark:divide-gray-600">
               <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                 <div class="font-medium truncate" id="avatarFullName">${
-                  userData ? userData.name : "Sem conta logada"
+                  userData ? userData.name : "Sem conta"
                 } ${userData ? userData.surname : ""}</div>
                 <div id="avatarEmail">${
                   loggedInEmail ? loggedInEmail : ""
@@ -97,8 +99,8 @@ function createNavbar(selectedItem) {
               <div class="py-1">
   ${
     loggedInEmail
-      ? `<a href="/View/login.html" id="logoutButton" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white select-none" onclick="localStorage.removeItem('loggedInUser')">Sign Out</a>`
-      : `<a href="/View/login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white select-none">Log In</a>`
+      ? `<a href="/View/login.html" id="logoutButton" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white select-none" onclick="localStorage.removeItem('loggedInUser')">Terminar sessão</a>`
+      : `<a href="/View/login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white select-none">Iniciar Sessão</a>`
   }
 </div>
 

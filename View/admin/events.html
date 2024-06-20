@@ -45,7 +45,7 @@
               href="/View/index-admin.html"
               class="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-lg group"
             >
-              <span class="ms-3">Presentation</span>
+              <span class="ms-3">Apresentação</span>
             </a>
           </li>
           <li>
@@ -53,7 +53,7 @@
               href="/View/admin/study-plans.html"
               class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
             >
-              <span class="flex-1 ms-3 whitespace-nowrap">Study Plans</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Estudos</span>
             </a>
           </li>
           <li>
@@ -77,7 +77,7 @@
               href="/View/admin/events.html"
               class="flex items-center p-2 text-gray-900 rounded-lg text-white bg-violet-600 group"
             >
-              <span class="flex-1 ms-3 whitespace-nowrap">Events</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Eventos</span>
             </a>
           </li>
           <li>
@@ -85,7 +85,7 @@
               href="/View/admin/projects.html"
               class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
             >
-              <span class="flex-1 ms-3 whitespace-nowrap">Projects</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Projetos</span>
             </a>
           </li>
           <li id="logoutButton">
@@ -108,7 +108,7 @@
                   d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
                 />
               </svg>
-              <span class="flex-1 ms-3 whitespace-nowrap">Log Out</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Terminar Sessão</span>
             </a>
           </li>
         </ul>
@@ -120,12 +120,12 @@
       <div class="p-4 border-2 bg-gray-100 rounded-lg">
         <!-- TABLE GROUP -->
         <div class="flex justify-between items-center mb-5 mx-1">
-          <p class="font-medium text-lg">Events</p>
+          <p class="font-medium text-lg">Eventos</p>
           <button
             id="addToEvents"
             class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
           >
-            Add
+            Adicionar
           </button>
         </div>
 
@@ -134,12 +134,12 @@
           <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th scope="col" class="px-6 py-3">Title</th>
-                <th scope="col" class="px-6 py-3">Subtitle</th>
-                <th scope="col" class="px-6 py-3">Image</th>
-                <th scope="col" class="px-6 py-3">Description</th>
-                <th scope="col" class="px-6 py-3">Date</th>
-                <th scope="col" class="px-6 py-3">Action</th>
+                <th scope="col" class="px-6 py-3">Título</th>
+                <th scope="col" class="px-6 py-3">Subtítulo</th>
+                <th scope="col" class="px-6 py-3">Imagem</th>
+                <th scope="col" class="px-6 py-3">Descrição</th>
+                <th scope="col" class="px-6 py-3">Data</th>
+                <th scope="col" class="px-6 py-3">Ação</th>
               </tr>
             </thead>
             <tbody>
@@ -163,20 +163,20 @@
           alt="close"
         />
         <form class="space-y-4 bg-white p-8 rounded-lg">
-          <h5 class="text-xl font-medium text-gray-900">Create New Event</h5>
+          <h5 class="text-xl font-medium text-gray-900">Criar novo evento</h5>
           <!-- Input fields -->
           <div>
             <label
               for="title"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Title</label
+              >Titulo</label
             >
             <input
               type="text"
               name="title"
               id="title"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="Event Title"
+              placeholder="evento"
               required
             />
           </div>
@@ -184,14 +184,14 @@
             <label
               for="subtitle"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Subtitle</label
+              >Subtitulo</label
             >
             <input
               type="text"
               name="subtitle"
               id="subtitle"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="Event Subtitle"
+              placeholder="evento"
               required
             />
           </div>
@@ -199,14 +199,14 @@
             <label
               for="imagePath"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Image Path</label
+              >Caminho da imagem</label
             >
             <input
               type="text"
               name="imagePath"
               id="imagePath"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="e.g. event_image.png"
+              placeholder="e.g. image_evento.png"
               required
             />
           </div>
@@ -214,14 +214,14 @@
             <label
               for="description"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Description</label
+              >Descrição</label
             >
             <textarea
               name="description"
               id="description"
               rows="3"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="Event Description"
+              placeholder="algo aqui"
               required
             ></textarea>
           </div>
@@ -229,7 +229,7 @@
             <label
               for="date"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Date</label
+              >Data</label
             >
             <input
               type="date"
@@ -243,7 +243,7 @@
             type="submit"
             class="w-full hover:scale-[1.02] transition text-white bg-violet-600 hover:bg-violet-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
-            Add
+            Adicionar
           </button>
         </form>
       </div>
@@ -258,7 +258,7 @@
         <div class="relative bg-white rounded-lg shadow">
           <div class="p-4 text-center">
             <h3 class="mb-5 text-lg font-normal text-gray-500">
-              Are you sure you want to delete this event?
+              Tens a certeza que queres apagar este evento?
             </h3>
             <div class="flex justify-center">
               <button
@@ -266,14 +266,14 @@
                 type="button"
                 class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 mr-3"
               >
-                Yes, I'm sure
+                Sim, tenho
               </button>
               <button
                 id="DoNotDelete"
                 type="button"
                 class="text-gray-900 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5"
               >
-                No, cancel
+                Não, cancelar
               </button>
             </div>
           </div>

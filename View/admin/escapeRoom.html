@@ -45,7 +45,7 @@
               href="/View/index-admin.html"
               class="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-lg group"
             >
-              <span class="ms-3">Presentation</span>
+              <span class="ms-3">Apresentação</span>
             </a>
           </li>
           <li>
@@ -53,7 +53,7 @@
               href="/View/admin/study-plans.html"
               class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
             >
-              <span class="flex-1 ms-3 whitespace-nowrap">Study Plans</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Estudos</span>
             </a>
           </li>
           <li>
@@ -77,7 +77,7 @@
               href="/View/admin/events.html"
               class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
             >
-              <span class="flex-1 ms-3 whitespace-nowrap">Events</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Eventos</span>
             </a>
           </li>
           <li>
@@ -85,7 +85,7 @@
               href="/View/admin/projects.html"
               class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
             >
-              <span class="flex-1 ms-3 whitespace-nowrap">Projects</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Projetos</span>
             </a>
           </li>
           <li id="logoutButton">
@@ -108,7 +108,7 @@
                   d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
                 ></path>
               </svg>
-              <span class="flex-1 ms-3 whitespace-nowrap">Log Out</span>
+              <span class="flex-1 ms-3 whitespace-nowrap">Terminar Sessão</span>
             </a>
           </li>
         </ul>
@@ -120,12 +120,12 @@
       <div class="p-4 border-2 bg-gray-100 rounded-lg">
         <!-- TABLE GROUP -->
         <div class="flex justify-between items-center mb-5 mx-1">
-          <p class="font-medium text-lg">Questions</p>
+          <p class="font-medium text-lg">Perguntas</p>
           <button
             id="addToER"
             class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
           >
-            Add
+            Adicionar
           </button>
         </div>
         <!-- TABLE GROUP -->
@@ -148,13 +148,13 @@
           alt="close"
         />
         <form class="space-y-4 bg-white p-8 rounded-lg" id="popUpForm">
-          <h5 class="text-xl font-medium text-gray-900">Create New Variant</h5>
+          <h5 class="text-xl font-medium text-gray-900">Criar Nova Variante</h5>
           <!-- Select field -->
           <div>
             <label
               for="ucName"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Select a Subject</label
+              >Seleciona uma disciplina</label
             >
             <select
               name="ucName"
@@ -162,7 +162,9 @@
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
               required
             >
-              <option value="" disabled selected>Select a Subject</option>
+              <option value="" disabled selected>
+                Seleciona uma disciplina
+              </option>
               <option value="Algoritmia e Estruturas de Dados">
                 Algoritmia e Estruturas de Dados
               </option>
@@ -181,7 +183,7 @@
             type="button"
             class="w-full hover:scale-[1.02] transition text-white bg-violet-600 hover:bg-violet-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
-            Next
+            Próximo
           </button>
         </form>
         <!-- Second pop-up for entering x, y, and answer -->
@@ -189,7 +191,7 @@
           class="space-y-4 bg-white p-8 rounded-lg hidden"
           id="popUpFormSecond"
         >
-          <h5 class="text-xl font-medium text-gray-900">Enter Values</h5>
+          <h5 class="text-xl font-medium text-gray-900">Mete os valores</h5>
           <div id="dynamicFieldsContainer">
             <!-- Fields will be dynamically added here -->
           </div>
@@ -198,7 +200,7 @@
             type="button"
             class="w-full hover:scale-[1.02] transition text-white bg-violet-600 hover:bg-violet-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
-            Add
+            Adicionar
           </button>
         </form>
       </div>

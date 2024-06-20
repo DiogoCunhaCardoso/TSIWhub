@@ -227,7 +227,7 @@ function chooseOptionAndSubmit(widget, elemento, input) {
       // Se a resposta estiver correta, mostrar um alerta de acerto após um atraso
       document.getElementById("pass-success").style.display = "flex";
       document.getElementById("pass-success").style.background = "#0e860a";
-      document.getElementById("pass-success").textContent = "Correct";
+      document.getElementById("pass-success").textContent = "Correto!";
       document
         .getElementById(elemento)
         .setAttribute("coords", "-1, -1, -1, -1");
@@ -318,7 +318,7 @@ function chooseOptionAndSubmit(widget, elemento, input) {
       document.getElementById("pass-success").style.display = "flex";
       document.getElementById("pass-success").style.background = "#7A090E";
       document.getElementById("pass-success").style.cursor = "default";
-      document.getElementById("pass-success").textContent = "Wrong  -1 min";
+      document.getElementById("pass-success").textContent = "Errado  -1 min";
 
       setTimeout(function () {
         document.getElementById("pass-success").style.display = "none";
@@ -340,7 +340,7 @@ function chooseOptionAndSubmit(widget, elemento, input) {
       // Se a resposta estiver correta, mostrar um alerta de acerto após um atraso
       document.getElementById("pass-success").style.display = "flex";
       document.getElementById("pass-success").style.background = "#0e860a";
-      document.getElementById("pass-success").textContent = "Correct";
+      document.getElementById("pass-success").textContent = "Correto";
       document
         .getElementById(elemento)
         .setAttribute("coords", "-1, -1, -1, -1");
@@ -367,7 +367,7 @@ function chooseOptionAndSubmit(widget, elemento, input) {
       document.getElementById("pass-success").style.display = "flex";
       document.getElementById("pass-success").style.background = "#7A090E";
       document.getElementById("pass-success").style.cursor = "default";
-      document.getElementById("pass-success").textContent = "Wrong  -1 min";
+      document.getElementById("pass-success").textContent = "Errado  -1 min";
 
       setTimeout(function () {
         document.getElementById("pass-success").style.display = "none";

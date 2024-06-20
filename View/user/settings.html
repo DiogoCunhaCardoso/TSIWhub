@@ -29,7 +29,7 @@
               for="fileInput"
               class="inline-block px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white cursor-pointer transition duration-300 ease-in-out"
             >
-              Change Picture
+              Mudar Foto
             </label>
             <input type="file" id="fileInput" class="hidden" accept="image/*" />
           </div>
@@ -38,21 +38,21 @@
         <div class="col-span-3 lg:col-span-2">
           <!-- GENERAL INFO -->
           <div class="bg-gray-100 shadow-md p-6 lg:p-8 rounded-lg">
-            <h5 class="text-xl font-medium text-gray-900">General Info</h5>
+            <h5 class="text-xl font-medium text-gray-900">Informação Geral</h5>
             <form action="">
               <div class="flex flex-wrap gap-4 mt-5">
                 <div class="w-96">
                   <label
                     for="name"
                     class="block mb-2 text-sm font-medium text-gray-900"
-                    >First Name</label
+                    >Primeiro Nome</label
                   >
                   <input
                     type="text"
                     name="name"
                     id="name"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-                    placeholder="First Name"
+                    placeholder="Nome"
                     required
                   />
                 </div>
@@ -60,14 +60,14 @@
                   <label
                     for="surname"
                     class="block mb-2 text-sm font-medium text-gray-900"
-                    >Last Name</label
+                    >Sobrenome</label
                   >
                   <input
                     type="text"
                     name="surname"
                     id="surname"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-                    placeholder="Last Name"
+                    placeholder="sobrenome"
                     required
                   />
                 </div>
@@ -82,7 +82,7 @@
                     name="email"
                     id="email"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-                    placeholder="name@email.com"
+                    placeholder="nome@email.com"
                     required
                   />
                 </div>
@@ -91,68 +91,66 @@
                 id="saveInfo"
                 class="mt-6 px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
               >
-                Save
+                Atualizar
               </button>
             </form>
           </div>
           <!-- GENERAL INFO -->
           <div class="bg-gray-100 shadow-md p-6 lg:p-8 rounded-lg mt-5">
-            <h5 class="text-xl font-medium text-gray-900">
-              Password Information
-            </h5>
+            <h5 class="text-xl font-medium text-gray-900">Palavra-passe</h5>
             <form action="">
               <div class="flex flex-wrap gap-4 mt-5">
                 <div class="w-96">
                   <label
                     for="current"
                     class="block mb-2 text-sm font-medium text-gray-900"
-                    >Current Password</label
+                    >Palavra-passe Atual</label
                   >
                   <input
                     type="password"
                     name="current"
                     id="currentPass"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-                    placeholder="Current Password"
+                    placeholder="********"
                     required
                   />
                   <div id="passError" class="text-red-500 text-xs hidden">
-                    Invalid password
+                    Palavra-passe Inválida
                   </div>
                 </div>
                 <div class="w-96">
                   <label
                     for="new"
                     class="block mb-2 text-sm font-medium text-gray-900"
-                    >New Password</label
+                    >Nova palavra-passe</label
                   >
                   <input
                     type="password"
                     name="new"
                     id="newPass"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-                    placeholder="Password"
+                    placeholder="********"
                     required
                   />
                   <div id="passDontMatch" class="text-red-500 text-xs hidden">
-                    Passwords don't match
+                    Palavras-passe não coincidem
                   </div>
                   <div id="shortPass" class="text-red-500 text-xs hidden">
-                    Password should be at least 6 characters long
+                    Palavras-passe devem ter no mínimo 6 digitos
                   </div>
                 </div>
                 <div class="w-96">
                   <label
                     for="confPass"
                     class="block mb-2 text-sm font-medium text-gray-900"
-                    >Confirm New Password</label
+                    >Confirmar nova palavra-passe</label
                   >
                   <input
                     type="password"
                     name="confPass"
                     id="confPass"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-                    placeholder="Password"
+                    placeholder="********"
                     required
                   />
                 </div>
@@ -161,7 +159,7 @@
                 id="savePass"
                 class="mt-6 px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
               >
-                Save
+                Atualizar
               </button>
             </form>
           </div>
@@ -177,7 +175,7 @@
           <div class="relative bg-white rounded-lg shadow-lg border">
             <div class="p-4 text-center">
               <h3 class="text-lg font-normal text-gray-500">
-                Password changed with success
+                Palavra-passe mudada com sucesso
               </h3>
             </div>
           </div>

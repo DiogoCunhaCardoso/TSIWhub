@@ -1,12 +1,9 @@
-const bannerImage = document.getElementById("bannerImage");
 const galleryContainer = document.getElementById("wholeGallery");
 
 // POPULATE IMAGES FROM LS - ONLOAD
 document.addEventListener("DOMContentLoaded", () => {
   const imagesFromLS = JSON.parse(localStorage.getItem("images"));
-  if (imagesFromLS && imagesFromLS.banner) {
-    bannerImage.src = imagesFromLS.banner;
-  }
+
   if (imagesFromLS && imagesFromLS.gallery) {
     imagesFromLS.gallery.forEach((imageData) => {
       const img = document.createElement("img");
@@ -22,23 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-// ADD IMAGE - BANNER
-document
-  .getElementById("bannerUpload")
-  .addEventListener("change", function (e) {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      const images = JSON.parse(localStorage.getItem("images")) || {};
-      images.banner = e.target.result;
-      localStorage.setItem("images", JSON.stringify(images));
-      bannerImage.src = e.target.result;
-    };
-
-    reader.readAsDataURL(file);
-  });
 
 // ADD IMAGES - GALLERY
 document
