@@ -164,6 +164,14 @@ popUpForm.addEventListener("submit", (e) => {
     // Open the second pop-up
     popUpForm.reset();
     popUpForm.style.display = "none";
+
+    const secondModalFields = document.getElementById("dynamicFieldsContainer");
+    const newInput = document.createElement("input");
+    newInput.type = "text";
+    newInput.name = "newInputName";
+    // Append the new input element to the container
+    secondModalFields.appendChild(newInput);
+
     popUpForm.nextElementSibling.style.display = "block";
   } else {
     console.error("Please select a subject");

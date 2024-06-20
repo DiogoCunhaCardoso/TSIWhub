@@ -72,6 +72,22 @@
               <span class="flex-1 ms-3 whitespace-nowrap">Escape Room</span>
             </a>
           </li>
+          <li>
+            <a
+              href="/View/admin/events.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+            >
+              <span class="flex-1 ms-3 whitespace-nowrap">Events</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/View/admin/projects.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+            >
+              <span class="flex-1 ms-3 whitespace-nowrap">Projects</span>
+            </a>
+          </li>
           <li id="logoutButton">
             <a
               href="#"
@@ -174,43 +190,8 @@
           id="popUpFormSecond"
         >
           <h5 class="text-xl font-medium text-gray-900">Enter Values</h5>
-          <div>
-            <label for="x" class="block mb-2 text-sm font-medium text-gray-900"
-              >X</label
-            >
-            <input
-              type="text"
-              id="x"
-              name="x"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              required
-            />
-          </div>
-          <div>
-            <label for="y" class="block mb-2 text-sm font-medium text-gray-900"
-              >Y</label
-            >
-            <input
-              type="text"
-              id="y"
-              name="y"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              required
-            />
-          </div>
-          <div>
-            <label
-              for="answer"
-              class="block mb-2 text-sm font-medium text-gray-900"
-              >Answer</label
-            >
-            <input
-              type="text"
-              id="answer"
-              name="answer"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              required
-            />
+          <div id="dynamicFieldsContainer">
+            <!-- Fields will be dynamically added here -->
           </div>
           <button
             id="nextButtonSecond"

@@ -36,7 +36,6 @@ let hint2Coords = [450, 900];
 let hint1 = createHint(hint1Coords, `_${page[1]}`);
 let hint2 = createHint(hint2Coords, `${page[0]}_`);
 
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 function getRandomQuestionFromSubject(subject) {
   if (subject == "codigo") {
     UI.popupQuestion.innerHTML = `Decifra o código: ${
@@ -202,6 +201,11 @@ function openPopup(widget, subj, input = false) {
           items.keys.n3 == "available"
         ) {
           closePopup();
+          const stats = {
+            wrongAnswers: state.wrong,
+            timeLeft: (time.totalSeconds / 60 - 0.2).toFixed(2),
+          };
+          localStorage.setItem("gameStats", JSON.stringify(stats));
           window.location.href = "./success.html";
         } else {
           UI.popupQuestion.innerHTML = "Ainda não tens todas as chaves!";
@@ -320,6 +324,7 @@ function chooseOptionAndSubmit(widget, elemento, input) {
         document.getElementById("pass-success").style.display = "none";
       }, 2000); // Defina o tempo de espera em milissegundos
       time.tempoPerdido = 60;
+      state.wrong++;
     }
   } else {
     const selectedAnswer = document.getElementById(widget).textContent;
@@ -377,7 +382,6 @@ function chooseOptionAndSubmit(widget, elemento, input) {
   }
 }
 
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 function showBubble(clickedArea) {
   const index = clickableItems.indexOf(clickedArea) * 2;
   const top = coords_bubble[index + 1] * UI.height - 32;
@@ -388,18 +392,15 @@ function showBubble(clickedArea) {
   UI.bubble.style.left = `${parseInt(left)}px`;
 }
 
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 function ghostBubble() {
   UI.bubble.style.visibility = "hidden";
 }
 
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 function closePopup() {
   UI.popup.style.display = "none";
   UI.popup.style.pointerEvents = "none";
 }
 
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 function responsiveClickAreas() {
   clickableItems.forEach((clickAreaID, index) => {
     const subject = subjects[index];
@@ -440,7 +441,6 @@ function responsiveClickAreas() {
   });
 }
 
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 function createClickAreas() {
   UI.coordMap.innerHTML = "";
   // Dynamically create and append area elements
@@ -465,8 +465,6 @@ function createClickAreas() {
 
   responsiveClickAreas();
 }
-
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 
 const pageOneText = document.getElementById("pageOneText");
 const pageTwoText = document.getElementById("pageTwoText");
@@ -518,7 +516,6 @@ function closeManual() {
 }
 
 openPopup("post-it", "", false);
-//DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone
 
 window.onload = () => responsiveClickAreas();
 window.onload = () => createClickAreas();

@@ -13,6 +13,6 @@ if (loggedInEmail) {
   if (userData) {
     document.getElementById(
       "title"
-    ).innerHTML = `Welcome to TSIW's <br> Escape Room ${userData.name}`;
+    ).innerHTML = `Bem-vindo à Escape Room <br> do TSIW ${userData.name}`;
   }
 }

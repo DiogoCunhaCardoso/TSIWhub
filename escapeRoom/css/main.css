@@ -64,7 +64,7 @@
 }
 
 #answer {
-  display: none;
+  display: block;
 }
 body {
   margin: 0;

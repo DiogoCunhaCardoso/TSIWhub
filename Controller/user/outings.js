@@ -8,7 +8,7 @@ outings.forEach((plan) => {
   // Create the HTML for the card
   const cardHTML = `
     <div class="m-4 max-w-sm rounded-lg overflow-hidden bg-gray-100">
-      <img src="${plan.image}" alt="${plan.name}" class="w-full">
+      <img src="${plan.image}" alt="${plan.name}" class="w-full h-40 object-cover">
       <div class="px-6 py-4">
         <div class="font-bold text-lg mb-2">${plan.name}</div>
         <p class="text-gray-700 text-base">${plan.description}</p>

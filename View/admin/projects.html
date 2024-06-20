@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Study Plans</title>
+    <title>Admin - Events</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -50,8 +50,8 @@
           </li>
           <li>
             <a
-              href="#"
-              class="flex items-center p-2 text-white rounded-lg bg-violet-600 group"
+              href="/View/admin/study-plans.html"
+              class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Study Plans</span>
             </a>
@@ -59,7 +59,7 @@
           <li>
             <a
               href="/View/admin/alumni.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+              class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Alumni</span>
             </a>
@@ -67,7 +67,7 @@
           <li>
             <a
               href="/View/admin/escapeRoom.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+              class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Escape Room</span>
             </a>
@@ -75,7 +75,7 @@
           <li>
             <a
               href="/View/admin/events.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+              class="flex items-center p-2 hover:bg-gray-100 rounded-lg group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Events</span>
             </a>
@@ -83,7 +83,7 @@
           <li>
             <a
               href="/View/admin/projects.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+              class="flex items-center p-2 text-gray-900 rounded-lg text-white bg-violet-600 group"
             >
               <span class="flex-1 ms-3 whitespace-nowrap">Projects</span>
             </a>
@@ -120,9 +120,9 @@
       <div class="p-4 border-2 bg-gray-100 rounded-lg">
         <!-- TABLE GROUP -->
         <div class="flex justify-between items-center mb-5 mx-1">
-          <p class="font-medium text-lg">UC's</p>
+          <p class="font-medium text-lg">Projects</p>
           <button
-            id="addToUc"
+            id="addToEvents"
             class="px-4 py-2 border border-violet-700 rounded-lg text-violet-700 hover:bg-violet-600 hover:text-white transition"
           >
             Add
@@ -134,10 +134,12 @@
           <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th scope="col" class="px-6 py-3">UC's</th>
-                <th scope="col" class="px-6 py-3">Year</th>
-                <th scope="col" class="px-6 py-3">Semester</th>
-                <th scope="col" class="px-6 py-3">ECTs</th>
+                <th scope="col" class="px-6 py-3">Owner</th>
+                <th scope="col" class="px-6 py-3">Title</th>
+                <th scope="col" class="px-6 py-3">Subtitle</th>
+                <th scope="col" class="px-6 py-3">Image</th>
+                <th scope="col" class="px-6 py-3">Description</th>
+                <th scope="col" class="px-6 py-3">videoURL</th>
                 <th scope="col" class="px-6 py-3">Action</th>
               </tr>
             </thead>
@@ -149,7 +151,7 @@
       </div>
     </div>
 
-    <!-- POP UP ADD -->
+    <!-- ADD MODAL -->
     <div
       id="popup"
       class="fixed hidden z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50"
@@ -161,78 +163,100 @@
           class="absolute top-4 right-4 w-4 h-4 hover:scale-125 transition"
           alt="close"
         />
-        <form class="space-y-4 bg-white p-8 rounded-lg" id="popUpForm">
-          <h5 class="text-xl font-medium text-gray-900">Create New UC</h5>
+        <form class="space-y-4 bg-white p-8 rounded-lg">
+          <h5 class="text-xl font-medium text-gray-900">Create New Project</h5>
           <!-- Input fields -->
           <div>
             <label
-              for="ucName"
+              for="owner"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >UC's Name</label
+              >Owner</label
             >
             <input
-              autocomplete="off"
               type="text"
-              name="ucName"
-              id="ucName"
+              name="owner"
+              id="owner"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="UC's Name"
+              placeholder="Project Owner"
               required
             />
           </div>
           <div>
             <label
-              for="year"
+              for="title"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Year</label
+              >Title</label
             >
             <input
-              autocomplete="off"
-              type="number"
-              name="year"
-              id="year"
+              type="text"
+              name="title"
+              id="title"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="1, 2, or 3"
+              placeholder="Project Title"
               required
-              min="1"
-              max="3"
             />
           </div>
           <div>
             <label
-              for="semester"
+              for="subtitle"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Semester</label
+              >Subtitle</label
             >
             <input
-              autocomplete="off"
-              type="number"
-              name="semester"
-              id="semester"
+              type="text"
+              name="subtitle"
+              id="subtitle"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="1 or 2"
+              placeholder="Project Subtitle"
               required
-              min="1"
-              max="2"
             />
           </div>
           <div>
             <label
-              for="ects"
+              for="imagePath"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >ECTs Count</label
+              >Image Path</label
             >
             <input
-              autocomplete="off"
-              type="number"
-              name="ects"
-              id="ects"
+              type="text"
+              name="imagePath"
+              id="imagePath"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
-              placeholder="ECT Count"
+              placeholder="e.g. Project_image.png"
               required
-              min="1"
             />
           </div>
+          <div>
+            <label
+              for="description"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Description</label
+            >
+            <textarea
+              name="description"
+              id="description"
+              rows="3"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              placeholder="Project Description"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <label
+              for="video"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >videoURL</label
+            >
+            <input
+              type="text"
+              name="video"
+              id="video"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5"
+              placeholder="e.g. https://youtube.com"
+              required
+            />
+          </div>
+
           <button
             type="submit"
             class="w-full hover:scale-[1.02] transition text-white bg-violet-600 hover:bg-violet-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
@@ -252,7 +276,7 @@
         <div class="relative bg-white rounded-lg shadow">
           <div class="p-4 text-center">
             <h3 class="mb-5 text-lg font-normal text-gray-500">
-              Are you sure you want to delete this UC?
+              Are you sure you want to delete this event?
             </h3>
             <div class="flex justify-center">
               <button
@@ -275,7 +299,7 @@
       </div>
     </div>
 
-    <script type="module" src="/Controller/admin/study-plans.js"></script>
+    <script type="module" src="/Controller/admin/projects.js"></script>
     <script type="module" src="/utils/logout.js"></script>
   </body>
 </html>

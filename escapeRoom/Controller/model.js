@@ -350,5 +350,6 @@ export const UI = {
 export const state = {
   currentSubj: null,
   correctAnswer: document.getElementById("answer"),
+  wrong: 0,
   //selectedAnswer:
 };
